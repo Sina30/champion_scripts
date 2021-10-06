@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Inventory</title>
+        <link rel="stylesheet" type="text/css" href="ui.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="ui.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body>
+        <div class="container noselect">
+            <p class="inv-label">Champion Roleplay</p>
+            <p class="desc">Rucksack</p>
+            <div class="inv-head-single" id="close">
+                ❌
+            </div>
+            <div class="inv-head-btn">
+                <div class="ausgewaehlttext">Aktuell ausgewählt: </div>
+                <p>bulle3tproof</p>
+            </div>
+            <div class="inv-cont" id="invcontainer">
+
+            </div>
+        <div class="sub-container noselect">
+            <div class="sub-containerhead"></div>
+            <div class="sub-container-actions">
+                <div class="sub-container-actions-elem3" id="use">
+                    Benutzen
+                </div>
+                <div class="sub-container-actions-elem2" id="give">
+                    Geben
+                </div>
+                <div class="sub-container-actions-elem1" id="throw">
+                    Wegwerfen
+                </div>
+            </div>
+            <div class="inputbox"></div>
+            <h7>Anzahl:</h7>
+            <input id="amount" type="number" placeholder="Anzahl" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" class="sub-cont-number nobr">
+        </div>
+    </body>
+</html>

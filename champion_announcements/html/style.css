@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-ExtraLight.ttf') format('truetype');
+}
+
+* {
+  -webkit-animation: fadein 3s;
+	-moz-animation: fadein 3s;
+	-ms-animation: fadein 3s;
+	-o-animation: fadein 3s;
+	animation: fadein 3s; 
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+  color: #232323;
+}
+
+html,
+body {
+  -webkit-animation: fadein 3s;
+	-moz-animation: fadein 3s;
+	-ms-animation: fadein 3s;
+	-o-animation: fadein 3s;
+	animation: fadein 3s;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.notification {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: fadein 3s;
+	-moz-animation: fadein 3s;
+	-ms-animation: fadein 3s;
+	-o-animation: fadein 3s;
+  font-weight: 700;
+	animation: fadein 3s;
+  margin-bottom: 1vh;
+  box-shadow: .5vh .5vh rgba(255, 166, 0, 0.884);
+  position: relative;
+  text-align: center;
+  top: 7vh;
+  left: 65vh;
+  max-width: 45vh;
+  min-height: 4.9vh;
+  word-wrap: break-word;
+  padding: 0.8vh;
+    background-color: rgba(22, 22, 22, 0.774);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+.notification-title {
+  -webkit-animation: fadein 3s;
+	-moz-animation: fadein 3s;
+	-ms-animation: fadein 3s;
+	-o-animation: fadein 3s;
+	animation: fadein 3s;
+  padding-left: 0px;
+  margin-top: 11px;
+  font-size: 1.7vh;
+  color: #fff;
+  text-align: center;
+}
+
+p {
+  -webkit-animation: fadein 3s;
+	-moz-animation: fadein 3s;
+	-ms-animation: fadein 3s;
+	-o-animation: fadein 3s;
+	animation: fadein 3s;
+  color: #ffffff;
+  text-align: center;
+}

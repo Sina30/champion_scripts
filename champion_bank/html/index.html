@@ -1,0 +1,712 @@
+<script src="https://kit.fontawesome.com/de946a5f81.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<body>
+		     <div id="wrapper">
+        <div id ="overview" class="bank_window">
+            <div class="bank_window_inner">
+                <div class="close"><img alt="self-Logo" v-on:click="terminate()" src='close.png'></div>
+                <div class="left">
+                    <div class="logo"><img alt="self-Logo" src='bank_logo.png'"></div>
+                    <div class="left_inner">
+                        <div class="info"></div>
+                        <div class="choose_bank">
+                            <div class="title_left">Aktuelles Konto</div>
+                            <select disabled @click.prevent class="myselect">
+                                <option class="tab" id="name" selected value="Privat"> Privat Konto </option>
+                            </select>
+                            <div class="spacer"></div>
+                            <nav class="bank_menu">
+                                <ul>
+                                <li><a onclick="selectTab('Overview')">Kontoübersicht<div class="dot"></div></a></li>
+                                <li v-if="atmData.type != 1"><a onclick="selectTab('Einzahlen')">Einzahlung<div class="dot"></div></a></li>
+                                <li><a onclick="selectTab('Auszahlen')">Auszahlung<div class="dot"></div></a></li>
+                                <li v-if="atmData.type != 1"><a onclick="selectTab('Transfer')">Überweisung<div class="dot"></div></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="right" id="overview">
+                    <div class="right_headline">
+                        Konto&uuml;bersicht
+                    </div>
+                    <div class="right_inner">
+                        <div class="box">
+                            <span>Information:</span><hr>
+                            <span>Kontoinhaber:</span> <p id="namee"> Niemand</p><br>
+                            <span>Kontostand:</span> <p id="konto3"></p><br>
+                            <!-- <span>Bilanz:</span> <span class="negativ">-150 $</span> pro Stunde -->
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+		<div id="transfer" class="bank_window">
+            <div class="bank_window_inner">
+                <div class="close"><img alt="self-Logo" v-on:click="terminate()" src='close.png'></div>
+                <div class="left">
+                    <div class="logo"><img alt="self-Logo" src='bank_logo.png'"></div>
+                    <div class="left_inner">
+                        <div class="info"></div>
+                        <div class="choose_bank">
+                            <div disabled class="title_left">Aktuelles Konto</div>
+                            <select disabled @click.prevent class="myselect">
+                                <option class="tab" id="name" selected value="Privat"> Privat Konto </option>
+                            </select>
+                            <div class="spacer"></div>
+                            <nav class="bank_menu">
+                                <ul>
+                                <li><a onclick="selectTab('Overview')">Kontoübersicht<div class="dot"></div></a></li>
+                                <li v-if="atmData.type != 1"><a onclick="selectTab('Einzahlen')">Einzahlung<div class="dot"></div></a></li>
+                                <li><a onclick="selectTab('Auszahlen')">Auszahlung<div class="dot"></div></a></li>
+                                <li v-if="atmData.type != 1"><a onclick="selectTab('Transfer')">Überweisung<div class="dot"></div></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right_headline">
+                        Überweisung
+                    </div>
+                    <div class="right_inner">
+                        <div class="box myheight1">
+                            <div class="box center">
+                                Name des Kontoinhabers:<hr>
+                                <input class="inputboxauszahlen mid" type="name" v-model="transferTarget" placeholder="Kontoinhaber">
+                            </div>
+                        </div> 
+                        <div class="box center">  
+                            Betrag:<hr>
+                            <input class="inputboxauszahlen mid" type="number" v-on:change="checkAmount('transfer')" v-model="transferAmount" min="0" max="1999999" placeholder="Betrag">
+                            <br><br>
+                            <!-- <input type="checkbox" name="zutat" v-model="transferAnonym" value="salami">anonyme Überweisung -->
+                        </div>
+                        <div class="button_enter">
+                            <submit v-on:click="transfer()" class="money_button red possub">
+                                Überweisung tätigen
+                            </submit>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+		<div id="einzahlen" class="bank_window">
+            <div class="bank_window_inner">
+                <div class="close"><img alt="self-Logo" v-on:click="terminate()" src='close.png'></div>
+                <div class="left">
+                    <div class="logo"><img alt="self-Logo" src='bank_logo.png'"></div>
+                    <div class="left_inner">
+                        <div class="info"></div>
+                        <div class="choose_bank">
+                            <div disabled class="title_left">Aktuelles Konto</div>
+                            <select disabled @click.prevent class="myselect">
+                                <option class="tab" id="name" selected value="Privat"> Privat Konto </option>
+                            </select>
+                            <div class="spacer"></div>
+                            <nav class="bank_menu">
+                                <ul>
+                                <li><a onclick="selectTab('Overview')">Kontoübersicht<div class="dot"></div></a></li>
+                                <li v-if="atmData.type != 1"><a onclick="selectTab('Einzahlen')">Einzahlung<div class="dot"></div></a></li>
+                                <li><a onclick="selectTab('Auszahlen')">Auszahlung<div class="dot"></div></a></li>
+                                <li v-if="atmData.type != 1"><a onclick="selectTab('Transfer')">Überweisung<div class="dot"></div></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right_headline">
+                        Einzahlung
+                    </div>
+                    <div class="right_inner">
+                        <div class="box myheight1">
+                            <div v-else class="money_box mleft"><span>Bargeld</span> <hr> <span class="negativ" id="geldHand"></span> </div>
+                            <div v-else class="money_box mright"><span>Konto</span> <hr> <span class="negativ" id="konto"></span> </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="box center">
+                            Betrag:
+                            <input id="geldBetragEinzahlen" class="inputbox mid" type="number" max="1999999" placeholder="Einzahlen">
+                        </div>
+                        <div class="button_enter">
+                            <a id="ee" class="money_button green possub">
+                                Betrag einzahlen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+		<div id="auszahlen" class="bank_window">
+            <div class="bank_window_inner">
+                <div class="close"><img alt="self-Logo" v-on:click="terminate()" src="close.png"></div>
+                <div class="left">
+                    <div class="logo"><img alt="self-Logo" src='bank_logo.png'"></div>
+                    <div class="left_inner">
+                        <div class="info"></div>
+                        <div class="choose_bank">
+                            <div disabled class="title_left">Aktuelles Konto</div>
+                            <select disabled @click.prevent class="myselect">
+                                <option class="tab" id="name" selected value="Privat"> Privat Konto </option>
+                            </select>
+                            <div class="spacer"></div>
+                            <nav class="bank_menu">
+                                <ul>
+                                <li><a onclick="selectTab('Overview')">Kontoübersicht<div class="dot"></div></a></li>
+                                <li v-if="atmData.type != 1"><a onclick="selectTab('Einzahlen')">Einzahlung<div class="dot"></div></a></li>
+                                <li><a onclick="selectTab('Auszahlen')">Auszahlung<div class="dot"></div></a></li>
+                                <li v-if="atmData.type != 1"><a onclick="selectTab('Transfer')">Überweisung<div class="dot"></div></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right_headline">
+                        Auszahlung
+                    </div>
+                    <div class="right_inner">
+                        <div class="box myheight1">
+                                                     <div v-else class="money_box mleft"><span>Bargeld</span> <hr> <span class="negativ" id="geldHand2"></span> </div>
+                            <div v-else class="money_box mright"><span>Konto</span> <hr> <span class="negativ" id="konto2"></span> </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="box center">
+                            Betrag:
+                            <input class="inputboxauszahlen mid" type="number" id="geldBetragAuszahlen" v-model="withdrawAmount" max="1999999" placeholder="Auszahlen">
+                        </div>
+                        <div class="button_enter">
+                            <submit id="ss" class="money_button red possub">
+                                Betrag auszahlen
+                            </submit>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+function selectTab(value) {
+	if (value == "Overview") {
+		var linak = document.getElementById('overview');
+linak.style.visibility = 'visible';
+	var link = document.getElementById('einzahlen');
+link.style.visibility = 'hidden';
+var linke = document.getElementById('auszahlen');
+linke.style.visibility = 'hidden';
+var linkee = document.getElementById('transfer');
+linkee.style.visibility = 'hidden';
+
+	}
+		if (value == "Transfer") {
+		var linak = document.getElementById('overview');
+linak.style.visibility = 'hidden';
+	var link = document.getElementById('einzahlen');
+link.style.visibility = 'hidden';
+var linke = document.getElementById('auszahlen');
+linke.style.visibility = 'hidden';
+var linkee = document.getElementById('transfer');
+linkee.style.visibility = 'visible';
+document.getElementById("transfer").style.top = "-18.5vh";
+
+	}
+			if (value == "Einzahlen") {
+		var linak = document.getElementById('overview');
+linak.style.visibility = 'hidden';
+	var link = document.getElementById('einzahlen');
+link.style.visibility = 'visible';
+var linke = document.getElementById('auszahlen');
+linke.style.visibility = 'hidden';
+var linkee = document.getElementById('transfer');
+linkee.style.visibility = 'hidden';
+document.getElementById("einzahlen").style.top = "-87vh";
+	}
+				if (value == "Auszahlen") {
+		var linak = document.getElementById('overview');
+linak.style.visibility = 'hidden';
+	var link = document.getElementById('einzahlen');
+link.style.visibility = 'hidden';
+var linke = document.getElementById('auszahlen');
+linke.style.visibility = 'visible';
+var linkee = document.getElementById('transfer');
+linkee.style.visibility = 'hidden';
+document.getElementById("auszahlen").style.top = "-155.6vh";
+
+	}
+	}
+
+				$(document).ready(function(){
+    window.addEventListener('message', function( event ) { 
+      if (event.data.action == 'open') {
+openHTML();
+var link = document.getElementById('einzahlen');
+link.style.visibility = 'hidden';
+var linke = document.getElementById('auszahlen');
+linke.style.visibility = 'hidden';
+var linkee = document.getElementById('transfer');
+linkee.style.visibility = 'hidden';
+	
+		var linak = document.getElementById('overview');
+linak.style.visibility = 'visible';
+	var link = document.getElementById('einzahlen');
+link.style.visibility = 'hidden';
+var linke = document.getElementById('auszahlen');
+linke.style.visibility = 'hidden';
+var linkee = document.getElementById('transfer');
+linkee.style.visibility = 'hidden';
+		initBank(event.data.bank, event.data.cash);
+	  	document.getElementById("name").innerHTML = event.data.name;
+	  	document.getElementById("namee").innerHTML = event.data.name;
+
+      }
+	        if (event.data.action == 'close') {
+closeHTML();
+      }
+    });   
+	 $geldKonto = 0;
+$geldHand = 0;	
+
+
+function initBank(geldKonto, geldHand) {
+	$geldKonto = geldKonto;
+	$geldHand = geldHand;
+    document.getElementById("konto").innerHTML = geldKonto + " $";
+    document.getElementById("geldHand").innerHTML = geldHand + " $";
+		    document.getElementById("konto3").innerHTML = geldKonto + " $";
+
+	    document.getElementById("konto2").innerHTML = geldKonto + " $";
+    document.getElementById("geldHand2").innerHTML = geldHand + " $";
+}	
+
+
+	closeHTML();
+
+var link = document.getElementById('einzahlen');
+link.style.visibility = 'hidden';
+var linke = document.getElementById('auszahlen');
+linke.style.visibility = 'hidden';
+var linkee = document.getElementById('transfer');
+linkee.style.visibility = 'hidden';
+	
+		var linak = document.getElementById('overview');
+linak.style.visibility = 'visible';
+	var link = document.getElementById('einzahlen');
+link.style.visibility = 'hidden';
+var linke = document.getElementById('auszahlen');
+linke.style.visibility = 'hidden';
+var linkee = document.getElementById('transfer');
+linkee.style.visibility = 'hidden';
+	function openHTML() {
+                      $('body').css('display', 'block');
+
+                    }
+                    function closeHTML() {
+                      $('body').css('display', 'none');
+
+                    }
+
+                     
+    $( "#ss" ).click(function() {
+	var input = document.getElementById("geldBetragAuszahlen");
+	            $.post('http://champion_bank/auszahlung', JSON.stringify(
+                {
+                    money: input.value,
+                }
+            ));
+			        $.post('http://champion_bank/escape', JSON.stringify({}));
+
+    });  
+
+
+ 
+    $( "#ee" ).click(function() {
+	var input = document.getElementById("geldBetragEinzahlen");
+	            $.post('http://champion_bank/einzahlung', JSON.stringify(
+                {
+                    money: input.value,
+                }
+            ));
+			        $.post('http://champion_bank/escape', JSON.stringify({}));
+
+    });  
+
+    $( ".close" ).click(function() {
+			        $.post('http://champion_bank/escape', JSON.stringify({}));
+
+    });  
+
+	
+
+    $(document).keyup(function(e) {
+      if (e.key === "Escape") { 
+        $.post('http://champion_bank/escape', JSON.stringify({}));
+      }
+    });
+					
+ });
+
+</script>
+
+<style lang="scss" scoped>
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(Poppins-Regular.ttf);
+}
+
+ body {
+    font-family: Poppins-Regular;
+   overflow: hidden; /* Hide scrollbars */
+
+    margin: 0;
+    padding: 0;
+  }
+  #wrapper {
+    width: 100%;
+    height: 100vh; 
+  }
+  #wrapper .bank_window {
+      width: 1340px;
+      height: 700px;
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+      border: 20px solid rgba(75, 75, 75, 0.5);
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); 
+  }
+  #wrapper .bank_window .bank_window_inner {
+      width: 100%;
+      height: 100%; 
+  }
+  #wrapper .bank_window .bank_window_inner .left {
+      width: 390px;
+      height: 100%;
+      float: left;
+      background-image: url('left_bg.png');
+      -webkit-box-shadow: 10px 0px 26px 0px rgba(0, 0, 0, 0.13);
+      -moz-box-shadow: 10px 0px 26px 0px rgba(0, 0, 0, 0.13);
+      box-shadow: 10px 0px 26px 0px rgba(0, 0, 0, 0.13);
+  }
+  #wrapper .bank_window .bank_window_inner .left .left_inner {
+      padding: 11px; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .logo {
+      text-align: center;
+      padding-top: 25px; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .logo img {
+      height: 90px;
+      width: auto; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .choose_bank {
+      width: 100%; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .myselect {
+      width: 100%;
+      background-color: transparent;
+      box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
+      border: 0;
+      color: #000;
+      height: 40px;
+      line-height: 30px;
+      padding-left: 10px;
+      color: #fff;
+      outline: none;
+  }
+  #wrapper .bank_window .bank_window_inner .left select > option {
+      height: 50px !important;
+      line-height: 50px !important;
+      background: #000;
+      padding: 50px;
+      font-size: 1rem; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .info {
+      padding-top: 20px; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .title_left {
+      color: #fff;
+      padding: 5px;
+      margin: 10px 0px;
+      font-weight: 800; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .spacer {
+      height: 2px;
+      margin: 20px 0px; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .bank_menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .bank_menu ul li {
+      height: 60px;
+      color: #fff;
+      border-bottom: 3px solid rgba(29, 67, 37, 0.3);
+      line-height: 70px;
+      padding: 20px 0px;
+      font-size: 1.2rem;
+      position: relative; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .bank_menu ul li a {
+      color: #fff;
+      text-decoration: none; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .bank_menu ul li a:hover {
+      color: #ccc;
+      cursor: pointer;
+      transition: 500ms all;
+  }
+  #wrapper .bank_window .bank_window_inner .left .bank_menu ul li a:hover > .dot {
+      background: #4c4c4c;
+      transition: 500ms all; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .bank_menu ul li a:active > .dot {
+      background: #4c4c4c;
+      transition: 500ms all; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .bank_menu ul li a {
+      display: block; 
+  }
+  #wrapper .bank_window .bank_window_inner .left .dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+      background: #ccc;
+      position: absolute;
+      right: -25px;
+      top: 43px;
+      border: 3px solid rgba(29, 67, 37, 0.3); 
+  }
+  #wrapper .bank_window .bank_window_inner .right {
+      float: right;
+      width: 950px;
+      height: 100%;
+      background-image: url('right_bg.jpg'); 
+  }
+  #wrapper .bank_window .bank_window_inner .right .right_headline {
+      font-size: 1.6rem;
+      height: 60px;
+      line-height: 60px;
+      padding-left: 20px;
+      background: #135f26;
+      color: #fff; 
+  }
+  #wrapper .bank_window .bank_window_inner .right .right_inner {
+      padding: 20px;
+      width: 92%;
+      margin: 0 auto;
+      margin-top: 0px; 
+  }
+      #wrapper .bank_window .bank_window_inner .right .right_inner .box {
+      font-size: 1.2rem;
+      background: #fff;
+      box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      margin-bottom: 10px; 
+  }
+  #wrapper .bank_window .bank_window_inner .right .right_inner .box .auszug {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; 
+  }
+  #wrapper .bank_window .bank_window_inner .right .right_inner .box .auszug li {
+      padding: 10px 10px;
+      border-bottom: 1px dotted #ccc; 
+  }
+  #wrapper .bank_window .bank_window_inner .right .right_inner .box .auszug li .amount {
+      float: right; 
+  }
+  #wrapper .bank_window .bank_window_inner .right .right_inner span {
+      font-weight: 600; 
+  }
+   #wrapper .bank_window .bank_window_inner .clear {
+      clear: both; 
+  }
+  #wrapper .bank_window .bank_window_inner .close {
+      position: absolute;
+      top: 15px;
+      right: 15px; 
+  }
+  #wrapper .bank_window .bank_window_inner .close img {
+      width: 30px;
+      height: 30px; 
+  }
+  .tabbed figure {
+      display: block;
+      margin-left: 0;
+      border-bottom: 1px solid silver;
+      clear: both; 
+  }
+  .tabbed figure > div {
+      display: none;
+      padding: 20px;
+      width: 100%;
+      border: 1px solid silver;
+      background: #fff;
+      line-height: 1.5em;
+      letter-spacing: 0.3px;
+      color: #444; 
+  }
+  .tabbed > input {
+      display: none; 
+  }
+  .tabbed #tab1:checked ~ figure .tab1, .tabbed #tab2:checked ~ figure .tab2, .tabbed #tab3:checked ~ figure .tab3, .tabbed #tab4:checked ~ figure .tab4, .tabbed #tab5:checked ~ figure .tab5 {
+      display: block; 
+  }
+  nav label {
+      float: left;
+      padding: 1px 15px;
+      border-top: 1px solid silver;
+      border-right: 1px solid silver;
+      background: #1f8138;
+      color: #eee;
+      font-size: 1rem; 
+  }
+  nav label:nth-child(1) {
+      border-left: 1px solid silver; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #1f8138;
+    border: 2px solid #1f8138;
+  }
+  nav label:hover {
+      background: #1f8138; 
+  }
+  nav label:active {
+      background: #ffffff; 
+  }
+  #tab1:checked ~ nav label[for="tab1"], #tab2:checked ~ nav label[for="tab2"], #tab3:checked ~ nav label[for="tab3"], #tab4:checked ~ nav label[for="tab4"], #tab5:checked ~ nav label[for="tab5"] {
+      background: white;
+      color: #111;
+      position: relative;
+      border-bottom: none; 
+  }
+  #tab1:checked ~ nav label[for="tab1"]:after, #tab2:checked ~ nav label[for="tab2"]:after, #tab3:checked ~ nav label[for="tab3"]:after, #tab4:checked ~ nav label[for="tab4"]:after, #tab5:checked ~ nav label[for="tab5"]:after {
+      content: "";
+      display: block;
+      position: absolute;
+      min-height: 2px;
+      width: 100%;
+      background: white;
+      left: 0;
+      bottom: -1px; 
+  }
+  .tab1, .tab2, .tab3, .tab4, .tab5 {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 300px; 
+  }
+  .positiv {
+      color: #25883e; 
+  }
+  .negativ, negativ {
+      color: red; 
+  }
+  .highlight {
+      background: #25883e;
+      padding-left: 5px;
+      color: #fff;
+  }  
+  .money_button {
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      color: #000;
+      background: #e0e0e0;
+      border-radius: 10px; 
+  }
+  .money_box {
+      width: 35%;
+      text-align: center;
+      padding: 50px;
+      color: #000;
+      background: #e0e0e0;
+      border-radius: 10px; 
+  }
+  .mleft {
+      float: left; 
+  }
+  .mright {
+      float: right; 
+  }
+  .mid {
+      margin: 0 auto; 
+  }
+  .center {
+      text-align: center; 
+  }
+  .inputbox {
+      width: 40%;
+      height: 50px;
+      border-radius: 10px;
+      border: 2px solid #25883e;
+      background: #e0e0e0;
+      padding: 10px;
+      text-align: center; 
+  }
+  .inputboxauszahlen {
+      width: 40%;
+      height: 50px;
+      border-radius: 10px;
+      border: 2px solid #d22a2a;
+      background: #e0e0e0;
+      padding: 10px;
+      text-align: center; 
+  }
+  .green {
+      background: #25883e;
+      color: #fff; 
+  }
+  .green:hover {
+      background: #e0e0e0;
+      color: #000 !important;
+      cursor: pointer; 
+  }
+  .red {
+      background: #d22a2a;
+      color: #fff; 
+  }
+  .red:hover {
+      background: #e0e0e0;
+      color: #000 !important;
+      cursor: pointer; 
+  }
+  .button_enter {
+      width: 100%;
+      text-align: center;
+      margin-top: 50px; 
+  }
+  .button_enter submit {
+      width: 600px; 
+  }
+  .myheight1 {
+      margin-top: 70px; 
+  }
+  .arrow {
+      position: absolute;
+      left: 59.5%;
+      top: 28%; 
+  }
+  .arrow img {
+      height: 100px; 
+  }
+  .checkbox {
+      background: #000; 
+  }
+  a:active > .dot {
+      background: #4c4c4c;
+      transition: 500ms all; 
+  }
+</style>
+

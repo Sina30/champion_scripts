@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading</title>
+<style id="applicationStylesheet" type="text/css">
+@font-face {
+	font-family: Gilroy;
+	src: url(Gilroy-Regular.ttf);
+}
+body::-webkit-scrollbar {
+display: none;
+}
+* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+    }
+	body {
+	user-select: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    }
+    *{
+    margin: 0px;
+    padding: 0px;
+    }
+
+    .area{
+    background: transparent;  
+    width: 100%;
+    height:100vh;
+    z-index: 9999;
+    }
+
+	.mediaViewInfo {
+		--web-view-name: nkn;
+		--web-view-id: nkn;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+    }
+    :root {
+		--web-view-ids: nkn;
+    }
+
+    #nkn {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(0,0,0,0);
+		overflow: hidden;
+		--web-view-name: nkn;
+		--web-view-id: nkn;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+    }
+    #Schrift {
+		position: absolute;
+		width: 1179px;
+		height: 1250px;
+		left: 371px;
+		top: -264px;
+		overflow: visible;
+    }
+    #fill {
+	opacity: 0.04;
+	fill: #ff9800;
+    }
+    .fill {
+    	position: absolute;
+	    overflow: visible;
+	    width: 1996px;
+	    height: 1109px;
+	    left: -76px;
+	    top: -29px;
+    }
+    #loading {
+	position: absolute;
+	width: 1439px;
+	height: 732px;
+	left: 241px;
+	top: 211px;
+	overflow: visible;
+    }
+    #logo {
+	-webkit-animation: fade-in 6.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 6.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	position: absolute;
+	width: 245px;
+	height: 245px;
+	left: 597px;
+	border-radius: 25px;
+	top: 0px;
+	overflow: visible;
+    }
+    @-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+    }
+    @keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+    }
+    #mitte {
+	position: absolute;
+	width: 646px;
+	height: 291px;
+	left: 397px;
+	top: 257px;
+	overflow: visible;
+    }
+    #mittebg {
+	opacity: 0.36;
+	fill: rgba(4,4,4,1);
+    }
+    .mittebg {
+	position: absolute;
+	overflow: visible;
+	width: 646px;
+	height: 291px;
+	left: 0px;
+	top: 0px;
+    }
+    #Willkommen_auf_ChampionRP {
+	left: 90px;
+	top: 22px;
+	position: absolute;
+	overflow: visible;
+	width: 344px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Gilroy;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 30px;
+	color: rgba(255,255,255,1);
+    }
+    #unten {
+	position: absolute;
+	width: 1439px;
+	height: 136px;
+	left: 0px;
+	top: 596px;
+	overflow: visible;
+    }
+    #untenbg {
+	opacity: 0.41;
+	fill: rgba(0,0,0,1);
+    }
+    .untenbg {
+	position: absolute;
+	overflow: visible;
+	width: 1439px;
+	height: 136px;
+	left: 0px;
+	top: 0px;
+    }
+    #tsicon {
+	fill: #ff9800;
+    }
+    .tsicon {
+	overflow: visible;
+	position: absolute;
+	width: 44.346px;
+	height: 44.362px;
+	left: 139.499px;
+	top: 45.819px;
+	transform: matrix(1,0,0,1,0,0);
+    }
+    #championrp {
+	left: 201px;
+	top: 51px;
+	position: absolute;
+	overflow: visible;
+	width: 115px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Gilroy;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 30px;
+	color: rgba(255,255,255,1);
+    }
+    #dcicon {
+	fill: #ff9800;
+    }
+    .dcicon {
+	overflow: visible;
+	position: absolute;
+	width: 38.817px;
+	height: 44.362px;
+	left: 528.592px;
+	top: 45.819px;
+	transform: matrix(1,0,0,1,0,0);
+    }
+    #discordggchampionrp {
+	left: 582px;
+	top: 51px;
+	position: absolute;
+	overflow: visible;
+	width: 275px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Gilroy;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 30px;
+	color: rgba(255,255,255,1);
+    }
+    #forumicon {
+	fill: #ff9800;
+    }
+    .forumicon {
+	overflow: visible;
+	position: absolute;
+	width: 40.875px;
+	height: 40.875px;
+	left: 1002.125px;
+	top: 47.563px;
+	transform: matrix(1,0,0,1,0,0);
+    }
+    #championrprpdeforum {
+	left: 1080px;
+	top: 46px;
+	position: absolute;
+	overflow: visible;
+	width: 304px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Gilroy;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 30px;
+	color: rgba(255,255,255,1);
+    }
+	#ladevorgang {
+    position: absolute;
+    font-family: Gilroy;
+    color: #fff;
+    text-transform: uppercase;
+    top: 64%;
+    left: 39%;
+    font-size: 2em;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #000000, #ff9800, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+    @keyframes animate
+    {
+	0%
+	{
+		background-position: -500%;
+	}	
+	100%
+	{
+		background-position: 500%;
+	}
+    }
+    body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+    }
+    .middle {
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+    }
+	#bgVideo{
+    width: 100%;
+    height:100vh; 
+}
+    .bar {
+  width: 10px;
+  height: 70px;
+  background: rgb(0, 0, 0);
+  display: inline-block;
+  transform-origin: bottom center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  /*   box-shadow:5px 10px 20px inset rgba(255,23,25.2); */
+  animation: loader 1.2s linear infinite;
+    }
+    .bar1 {
+  animation-delay: 0.1s;
+    }
+    .bar2 {
+  animation-delay: 0.2s;
+    }
+    .bar3 {
+  animation-delay: 0.3s;
+    }
+    .bar4 {
+  animation-delay: 0.4s;
+    }
+    .bar5 {
+  animation-delay: 0.5s;
+    }
+    .bar6 {
+  animation-delay: 0.6s;
+    }
+    .bar7 {
+  animation-delay: 0.7s;
+    }
+    .bar8 {
+  animation-delay: 0.8s;
+    }
+
+    @keyframes loader {
+  0% {
+    transform: scaleY(0.1);
+  }
+  50% {
+    transform: scaleY(1);
+    background: #ff9800;
+  }
+  100% {
+    transform: scaleY(0.1);
+    background: transparent;
+  }
+    }
+
+</style>
+<script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="nkn">
+<div class="area" >
+    </div >
+	<svg class="fill">
+		<rect id="fill" rx="0" ry="0" x="0" y="0" width="1996" height="1109">
+		</rect>
+	</svg>
+	<div>
+		<div id="ladevorgang">
+		<p>LADEVORGANG LÄUFT...</p>
+	</div>
+	<div id="loading">
+		<img id="logo" src="img/Logo.png" srcset="img/logo.png 1x">
+			
+		<div id="mitte">
+			<svg class="mittebg">
+				<rect id="mittebg" rx="45" ry="45" x="0" y="0" width="646" height="291">
+				</rect>
+			</svg>
+			<div id="Willkommen_auf_ChampionRP">
+				<span>Willkommen auf</span><span style="color:rgba(112,112,112,1);"> </span><span style="color:#ff9800;">Champion Roleplay</span><span>!</span>
+			</div>
+		</div>
+		<div id="unten">
+			<svg class="untenbg">
+				<rect id="untenbg" rx="22" ry="22" x="0" y="0" width="1439" height="136">
+				</rect>
+			</svg>
+			<svg class="tsicon" viewBox="0 -0.002 44.346 44.362">
+				<path id="tsicon" d="M 21.15860176086426 30.04795265197754 C 21.36655044555664 28.98222351074219 20.11886787414551 27.44861602783203 18.351318359375 25.82836151123047 C 16.54044723510742 24.1647834777832 14.17505168914795 22.44055938720703 12.85805416107178 21.79072570800781 C 10.97786617279053 20.75098991394043 9.244976043701172 21.63476371765137 8.846410751342773 23.75755882263184 C 8.413187980651855 26.02764511108398 8.846410751342773 28.21108818054199 10.10275745391846 30.16059112548828 C 10.98653221130371 31.50358009338379 12.30352878570557 32.12742233276367 13.86313056945801 32.24005889892578 C 14.86820793151855 32.29204559326172 18.4119701385498 32.4306755065918 19.2091007232666 32.15341186523438 C 20.24016952514648 31.78084182739258 20.95065498352051 31.13100624084473 21.15860176086426 30.04795265197754 Z M 38.92073822021484 31.85015678405762 C 38.80541229248047 31.75433158874512 38.65009307861328 31.72188758850098 38.50605010986328 31.7635383605957 C 38.36200714111328 31.80518913269043 38.24797439575195 31.91551780700684 38.20158386230469 32.05810165405273 C 37.5084342956543 34.25888061523438 34.32857513427734 41.80562210083008 23.29006004333496 42.58541870117188 C 10.31936836242676 43.49518585205078 30.24761962890625 46.36312103271484 35.88817977905273 42.03089141845703 C 37.85501098632812 40.52327728271484 40.0124626159668 38.99833297729492 39.92581558227539 34.63144683837891 C 39.89115905761719 33.75634002685547 39.50125503540039 32.31890487670898 38.92074203491211 31.85015678405762 Z M 44.29269790649414 21.2448616027832 C 44.26670455932617 19.60728073120117 43.54755401611328 18.3509349822998 42.03993988037109 17.58846282958984 C 41.78866958618164 17.4758243560791 41.60671997070312 17.35452079772949 41.52873611450195 17.033935546875 C 41.00475692749023 14.09658145904541 39.80653762817383 11.32080841064453 38.02829742431641 8.924874305725098 C 37.93299102783203 8.794906616210938 37.72504425048828 8.647610664367676 37.83768081665039 8.491650581359863 C 38.57415771484375 7.495238304138184 37.81168746948242 6.932047843933105 37.23116683959961 6.377523422241211 C 30.97543144226074 0.3291553854942322 23.68862342834473 -1.418465733528137 15.3707447052002 1.134660840034485 C 11.89629745483398 2.200388669967651 8.96771240234375 4.219207286834717 6.532999515533447 6.974503993988037 C 6.186421871185303 7.347075462341309 5.952481269836426 7.762969970703125 6.27306604385376 8.230851173400879 C 6.532999515533447 8.577427864074707 6.385704040527344 8.768046379089355 6.186421871185303 9.03664493560791 C 4.470859527587891 11.43756580352783 3.30982232093811 14.0880241394043 2.781290292739868 16.98281669616699 C 2.720639228820801 17.35538864135742 2.530021190643311 17.50268363952637 2.226765155792236 17.65864372253418 C 0.9964122772216797 18.26515579223633 0.2772624790668488 19.26156997680664 0.06931547075510025 20.60455894470215 L 0 22.8997745513916 L 0 24.71064758300781 C 0 27.37930107116699 1.819535732269287 29.07753372192383 4.48818826675415 28.95623207092285 C 5.155351161956787 28.93023872375488 5.501929759979248 28.58365821838379 5.527923107147217 27.95981788635254 C 5.701212406158447 21.24486541748047 5.319976329803467 19.69392776489258 5.848507881164551 17.05993270874023 C 7.979964256286621 6.272683620452881 20.30082130432129 0.4337063431739807 29.91836738586426 5.666171550750732 C 35.64557266235352 8.838229179382324 38.61748123168945 13.77696800231934 38.7821044921875 20.34375953674316 C 38.85142135620117 22.78713798522949 38.7821044921875 25.23917961120605 38.7821044921875 27.67389106750488 C 38.7821044921875 28.28040313720703 38.97272491455078 28.75694847106934 39.59656524658203 28.90424728393555 C 41.68470001220703 29.33746910095215 43.85947799682617 27.86450958251953 44.20605087280273 25.72438812255859 C 44.45732116699219 24.24276733398438 44.29269790649414 22.73515319824219 44.29269790649414 21.24486541748047 Z M 30.4642276763916 32.63862228393555 C 33.62675476074219 32.88122940063477 35.60224914550781 30.16925239562988 35.52426910400391 27.39662551879883 C 35.34231948852539 23.48029136657715 29.78839874267578 25.96699142456055 27.91687774658203 26.70347213745117 C 21.57449722290039 29.13818168640137 24.01787185668945 31.46025657653809 25.99337005615234 31.97146034240723 L 30.4642276763916 32.63862228393555 Z">
+				</path>
+			</svg>
+			<div id="championrp">
+				<span>championrp</span>
+			</div>
+			<svg class="dcicon" viewBox="0 0 38.817 44.362">
+				<path id="dcicon" d="M 25.75214195251465 21.07195091247559 C 25.75214195251465 22.42498970031738 24.75399780273438 23.5340404510498 23.48967933654785 23.5340404510498 C 22.24754333496094 23.5340404510498 21.22721672058105 22.42498970031738 21.22721672058105 21.07195091247559 C 21.22721672058105 19.71891021728516 22.22536087036133 18.60985946655273 23.48967933654785 18.60985946655273 C 24.75399780273438 18.60985946655273 25.75214195251465 19.71891021728516 25.75214195251465 21.07195091247559 Z M 15.39361476898193 18.60985946655273 C 14.12929725646973 18.60985946655273 13.13115215301514 19.71891021728516 13.13115215301514 21.07195091247559 C 13.13115215301514 22.42498970031738 14.1514778137207 23.5340404510498 15.39361476898193 23.5340404510498 C 16.65793228149414 23.5340404510498 17.65607643127441 22.42498970031738 17.65607643127441 21.07195091247559 C 17.67825698852539 19.71891021728516 16.65793228149414 18.60985946655273 15.39361476898193 18.60985946655273 Z M 38.81674957275391 4.569285869598389 L 38.81674957275391 44.36199951171875 C 33.22869491577148 39.42377853393555 35.01582717895508 41.05841827392578 28.5247631072998 35.02379989624023 L 29.70035743713379 39.12728500366211 L 4.547104835510254 39.12728500366211 C 2.04065203666687 39.12728500366211 0 37.08663177490234 0 34.55799865722656 L 0 4.569285869598389 C 0 2.04065203666687 2.04065203666687 0 4.547104835510254 0 L 34.26964569091797 0 C 36.77609634399414 0 38.81674957275391 2.04065203666687 38.81674957275391 4.569285869598389 Z M 32.49516296386719 25.59687232971191 C 32.49516296386719 18.45459175109863 29.30109977722168 12.66534900665283 29.30109977722168 12.66534900665283 C 26.10703659057617 10.26980113983154 23.06823921203613 10.33634376525879 23.06823921203613 10.33634376525879 L 22.75770378112793 10.69124031066895 C 26.52847290039062 11.84465217590332 28.2807731628418 13.50822734832764 28.2807731628418 13.50822734832764 C 23.01183128356934 10.62045097351074 16.82255363464355 10.61993217468262 11.71156597137451 12.86497783660889 C 10.890869140625 13.24205493927002 10.40288734436035 13.50822734832764 10.40288734436035 13.50822734832764 C 10.40288734436035 13.50822734832764 12.24391078948975 11.7559289932251 16.23649024963379 10.60251712799072 L 16.01467895507812 10.33634567260742 C 16.01467895507812 10.33634567260742 12.97588348388672 10.26980209350586 9.781818389892578 12.66535091400146 C 9.781818389892578 12.66535091400146 6.587754726409912 18.45459175109863 6.587754726409912 25.59687232971191 C 6.587754726409912 25.59687232971191 8.450959205627441 28.81311798095703 13.35295963287354 28.9683837890625 C 13.35295963287354 28.9683837890625 14.17365741729736 27.97023963928223 14.83908748626709 27.12736320495605 C 12.0221004486084 26.28448486328125 10.95741176605225 24.5100040435791 10.95741176605225 24.5100040435791 C 11.28371524810791 24.73839950561523 11.82177639007568 25.03446388244629 11.8668327331543 25.06452941894531 C 15.61074256896973 27.16115379333496 20.92881011962891 27.84807205200195 25.70777702331543 25.84086418151855 C 26.48411178588867 25.55251121520996 27.34917259216309 25.13107109069824 28.25859260559082 24.53218460083008 C 28.25859260559082 24.53218460083008 27.14954376220703 26.35102653503418 24.24383163452148 27.17172431945801 C 24.90926361083984 28.01460075378418 25.70777702331543 28.9683837890625 25.70777702331543 28.9683837890625 C 30.60977935791016 28.81311798095703 32.49516296386719 25.59687232971191 32.49516296386719 25.59687232971191 Z">
+				</path>
+			</svg>
+			<div id="discordggchampionrp">
+				<span>discord.gg/</span><span style="color:#ff9800;">championrp
+				</span>
+			</div>
+			<svg class="forumicon" viewBox="3 3 40.875 40.875">
+				<path id="forumicon" d="M 41.83113479614258 11.17497444152832 L 37.74364852905273 11.17497444152832 L 37.74364852905273 29.56867027282715 L 11.17497444152832 29.56867027282715 L 11.17497444152832 33.65615844726562 C 11.17497444152832 34.78022003173828 12.09465980529785 35.69990158081055 13.21871852874756 35.69990158081055 L 35.69990158081055 35.69990158081055 L 43.8748779296875 43.8748779296875 L 43.8748779296875 13.21871852874756 C 43.8748779296875 12.09465980529785 42.95519638061523 11.17497444152832 41.83113479614258 11.17497444152832 Z M 33.65615844726562 23.43743705749512 L 33.65615844726562 5.04374361038208 C 33.65615844726562 3.919684886932373 32.73647689819336 3 31.61241340637207 3 L 5.04374361038208 3 C 3.919684886932373 3 3 3.919684886932373 3 5.04374361038208 L 3 33.65615844726562 L 11.17497444152832 25.48118209838867 L 31.61241340637207 25.48118209838867 C 32.73647689819336 25.48118209838867 33.65615844726562 24.56149864196777 33.65615844726562 23.43743705749512 Z">
+				</path>
+			</svg>
+			<div id="championrprpdeforum">
+				<span>TikTok: championrp</span>
+			</div>
+		</div>
+		<div class="middle">
+			<div class="bar bar1"></div>
+			<div class="bar bar2"></div>
+			<div class="bar bar3"></div>
+			<div class="bar bar4"></div>
+			<div class="bar bar5"></div>
+			<div class="bar bar6"></div>
+			<div class="bar bar7"></div>
+			<div class="bar bar8"></div>
+		  </div>
+	</div>
+</div>
+  <script src="js/loa.js"></script>
+  <script src="js/main.js"></script>
+                      <audio id='muzica' volume='0.1' autoplay loop>
+
+                            <source src="Music.mp3" type="audio/mpeg">
+                            Error
+
+                          </audio>
+                          <script>
+                                var audio = document.getElementById("muzica");
+                                audio.volume = 0.2;
+
+
+								function toggleAudio() {
+									if(audio.paused) {
+										audio.play();
+									} else {
+										audio.pause();
+									}
+								}
+
+								document.addEventListener('keypress', function (evt) {
+									if(evt.keyCode == 32) {
+										toggleAudio();
+									}
+								});
+                              </script>
+              </div>
+        </div>
+
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="menu">
+    <div class="item_menu">
+        <div class="item_1 item" id="1" onclick="mouseClick()">
+            <img src="images/exit.png" id="menu_item_1" class="item_img">
+        </div>
+    </div>
+
+    <div class="item_menu_1">
+        <div class="item_2 item" id="2" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_2" class="item_img">
+        </div>
+        <div class="item_3 item" id="3" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_3" class="item_img">
+        </div>
+    </div>
+
+    <div class="item_menu_2">
+        <div class="item_4 item" id="4" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_4" class="item_img">
+        </div>
+
+        <div class="item_5 item" id="5" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_5" class="item_img">
+        </div>
+    </div>
+
+    <div class="item_menu_3">
+        <div class="item_6 item" id="6" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_6" class="item_img">
+        </div>
+
+        <div class="item_7 item" id="7" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_7" class="item_img">
+        </div>
+    </div>
+
+    <div class="item_menu_4">
+        <div class="item_8 item" id="8" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_8" class="item_img">
+        </div>
+
+        <div class="item_9 item" id="9" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_9" class="item_img">
+        </div>
+    </div>
+
+    <div class="item_menu_5">
+        <div class="item_10 item" id="10" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_10" class="item_img">
+        </div>
+
+        <div class="item_11 item" id="11" onclick="mouseClick()">
+            <img src="images/info.png" id="menu_item_11" class="item_img">
+        </div>
+    </div>
+</div>
+
+<div style="background-color:rgba(255, 0, 0, 0);margin-top:-1300px;margin-left:830px;width:240px;height:700px;" class="id1add" id="1" onclick="mouseClick(this)"></div>
+
+<div style="border-radius: 9%;background-color:rgba(177, 230, 116, 0);margin-top:-635px;margin-left:-570px;width:1400px;height:700px;" class="id2add" id="2" onclick="mouseClick(this)"></div>
+
+<div style="border-radius: 9%;background-color:rgba(0, 68, 255, 0);margin-top:-699px;margin-left:1070px;width:1400px;height:700px;" class="id3add" id="3" onclick="mouseClick(this)"></div>
+
+<div style="border-radius: -12%;background-color:rgba(225, 65, 231, 0);margin-top:-10px;margin-left:-180px;width:890px;height:495px;" class="id4add" id="4" onclick="mouseClick(this)"></div>
+
+<div style="background-color:rgba(236, 81, 169, 0);margin-top:-510px;margin-left:1220px;width:990px;height:545px;" class="id5add" id="5" onclick="mouseClick(this)"></div>
+
+<div style="background-color:rgba(133, 96, 117, 0);margin-top:-370px;margin-left:-280px;width:990px;height:545px;" class="id6add" id="6" onclick="mouseClick(this)"></div>
+
+<div style="background-color:rgba(133, 96, 117, 0);margin-top:-540px;margin-left:1220px;width:990px;height:545px;" class="id7add" id="7" onclick="mouseClick(this)"></div>
+
+<div style="border-radius: 12%;background-color:rgba(133, 96, 117, 0);margin-top:-400px;margin-left:-230px;width:990px;height:545px;;" class="id8add" id="8" onclick="mouseClick(this)"></div>
+
+<div style="border-radius: 12%;background-color:rgba(219, 177, 201, 0);margin-top:-540px;margin-left:1150px;width:990px;height:545px;" class="id9add" id="9" onclick="mouseClick(this)"></div>
+
+
+
+<div style="background-color:rgba(96, 120, 133, 0);margin-top:-410px;margin-left:730px;width:220px;height:545px;" class="id10add" id="10" onclick="mouseClick(this)"></div>
+
+
+
+<div style="background-color:rgba(121, 176, 206, 0);margin-top:-550px;margin-left:960px;width:220px;height:545px;" class="id11add" id="11" onclick="mouseClick(this)"></div>
+
+
+
+
+<div id="menu_text_1" class="menu_text" style="display: none">
+    <h3>
+        Abbrechen
+    </h3>
+    <span>Schließe dieses Menü</span>
+</div>
+<div id="menu_text_2" class="menu_text" style="display: none">
+    <h3>
+        Anlehnen
+    </h3>
+    <span>Lehne dich an</span>
+</div>
+<div id="menu_text_3" class="menu_text" style="display: none">
+    <h3>
+        Arme
+    </h3>
+    <span>Verschrenke deine Arme</span>
+</div>
+<div id="menu_text_4" class="menu_text" style="display: none">
+    <h3>
+        Kniehen
+    </h3>
+    <span>Kniehe dich hin</span>
+</div>
+<div id="menu_text_5" class="menu_text" style="display: none">
+    <h3>
+        Ergeben
+    </h3>
+    <span>Ergebe dich</span>
+</div>
+<div id="menu_text_6" class="menu_text" style="display: none">
+    <h3>
+        Hinsetzen
+    </h3>
+    <span>Setze dich hin</span>
+</div>
+<div id="menu_text_7" class="menu_text" style="display: none">
+    <h3>
+        Stuhl sitzen
+    </h3>
+    <span>Auf einen Stuhl setzen</span>
+</div>
+<div id="menu_text_8" class="menu_text" style="display: none">
+    <h3>
+        Mittelfinger
+    </h3>
+    <span>Mittelfinger zeigen</span>
+</div>
+<div id="menu_text_9" class="menu_text" style="display: none">
+    <h3>
+        Liegend(Rücken)
+    </h3>
+    <span>Liege auf dem Rücken</span>
+</div>
+<div id="menu_text_10" class="menu_text" style="display: none">
+    <h3>
+        Bewusstlos
+    </h3>
+    <span>Lege dich bewusstlos hin</span>
+</div>
+<div id="menu_text_11" class="menu_text" style="display: none">
+    <h3>
+        Umarmen
+    </h3>
+    <span>Umarme dein Gegenüber</span>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/index.js"></script>
+</html>
+
+<style>
+@font-face {
+    font-family: HelveticaNeue;
+    src: url(Poppins-Regular.ttf);
+}
+
+body {
+    overflow: hidden; /* Hide scrollbars */
+    display: none;
+    -ms-user-select: None;
+    -moz-user-select: None;
+    -webkit-user-select: None;
+     user-select: None;
+}
+
+.menu {
+    width: 100px;
+    margin: 0px auto;
+    margin-top: 150px;
+}
+
+.item_menu {
+    display: flex;
+    z-index: -1;
+}
+
+.item_menu_1 {
+    display: flex;
+    margin-top: -50px;
+}
+
+.item_menu_2 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.item_menu_3 {
+    display: flex;
+    margin-top: 50px;
+}
+
+.item_menu_4 {
+    display: flex;
+    margin-top: 50px;
+}
+
+.item_menu_5 {
+    display: flex;
+}
+
+.item_1 {
+    border: 5px solid black;
+    transition: 200ms;
+}
+
+.item_2 {
+    border: 5px solid black;
+    margin-left: -180px;
+    transition: 200ms;
+
+}
+
+.item_3 {
+    border: 5px solid black;
+    margin-left: 247px;
+    transition: 200ms;
+
+}
+
+.item_4 {
+    border: 5px solid black;
+    margin-left: -280px;
+    transition: 200ms;
+
+}
+
+.item_5 {
+    border: 5px solid black;
+    margin-left: 460px;
+    transition: 200ms;
+
+}
+
+.item_6 {
+    border: 5px solid black;
+    margin-left: -300px;
+    transition: 200ms;
+
+}
+
+.item_7 {
+    border: 5px solid black;
+    margin-left: 510px;
+    transition: 200ms;
+
+}
+
+.item_8 {
+    border: 5px solid black;
+    margin-left: -240px;
+    transition: 200ms;
+
+}
+
+.item_9 {
+    border: 5px solid black;
+    margin-left: 380px;
+    transition: 200ms;
+
+}
+
+.item_10 {
+    border: 5px solid black;
+    margin-left: -100px;
+    transition: 200ms;
+
+}
+
+.item_11 {
+    border: 5px solid black;
+    margin-left: 100px;
+    transition: 200ms;
+
+}
+
+.item {
+    background-color: black;
+    border-radius: 100%;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.70;
+    opacity: .7;
+}
+
+.item:hover {
+    border: 5px solid #ff6a00;
+    transition: 200ms;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+.itemhover {
+    border: 5px solid #ff6a00;
+    transition: 200ms;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+.menu_text {
+    width: 120px;
+    margin: 0px auto;
+    margin-top: -880px;
+    margin-left: 795px;
+}
+
+h3 {
+    width: 300px;
+    color: white;
+    font-family: HelveticaNeue;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	text-shadow:-.1vh 0 #000,0 .1vh #000,.1vh 0 #000,0 -.1vh #000;
+}
+
+span {
+    width: 300px;
+    margin-top: -30px;
+    color: white;
+    font-family: HelveticaNeue;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+	text-shadow:-.1vh 0 #000,0 .1vh #000,.1vh 0 #000,0 -.1vh #000;
+}
+
+img.item_img {
+    margin: 2px;
+    margin-bottom: -2px;
+    height: 90px;
+}
+</style>
+
+<script>
+    $(document).ready(function () {
+
+window.addEventListener("message", function (event) {
+    if (event.data.action == "open") {
+        $('body').show();
+    };
+
+    if (event.data.action == "close") {
+
+        $("body").hide();
+
+    };
+    $(document).keyup(function (e) {
+        if (e.key === "Escape") {
+            mouseClick();
+        $("body").hide();
+            $.post('http:///champion_animationsmenu/escape', JSON.stringify({}));
+        }
+    });
+});
+});
+
+let selected = 1;
+
+$( ".id1add" ).hover(function() {
+$(".item_1").addClass("itemhover");
+mouseOver('1');
+selected = 1;
+});
+
+$( ".id1add" ).mouseleave(function() {
+$(".item_1").removeClass("itemhover");
+mouseOut('1');
+selected = 1;
+});
+
+$( ".id2add" ).hover(function() {
+$(".item_2").addClass("itemhover");
+mouseOver('2');
+selected = 2;
+});
+
+$( ".id2add" ).mouseleave(function() {
+$(".item_2").removeClass("itemhover");
+mouseOut('2');
+selected = 1;
+});
+
+
+$( ".id3add" ).hover(function() {
+$(".item_3").addClass("itemhover");
+mouseOver('3');
+selected = 3;
+});
+
+$( ".id3add" ).mouseleave(function() {
+$(".item_3").removeClass("itemhover");
+mouseOut('3');
+selected = 1;
+});
+
+$( ".id4add" ).hover(function() {
+$(".item_4").addClass("itemhover");
+mouseOver('4');
+selected = 4;
+});
+
+$( ".id4add" ).mouseleave(function() {
+$(".item_4").removeClass("itemhover");
+mouseOut('4');
+selected = 1;
+});
+
+$( ".id5add" ).hover(function() {
+$(".item_5").addClass("itemhover");
+mouseOver('5');
+selected = 5;
+});
+
+$( ".id5add" ).mouseleave(function() {
+$(".item_5").removeClass("itemhover");
+mouseOut('5');
+selected = 1;
+});
+
+$( ".id6add" ).hover(function() {
+$(".item_6").addClass("itemhover");
+mouseOver('6');
+selected = 6;
+});
+
+$( ".id6add" ).mouseleave(function() {
+$(".item_6").removeClass("itemhover");
+mouseOut('6');
+selected = 1;
+});
+
+$( ".id7add" ).hover(function() {
+$(".item_7").addClass("itemhover");
+mouseOver('7');
+selected = 7;
+});
+
+$( ".id7add" ).mouseleave(function() {
+$(".item_7").removeClass("itemhover");
+mouseOut('7');
+selected = 1;
+});
+
+$( ".id8add" ).hover(function() {
+$(".item_8").addClass("itemhover");
+mouseOver('8');
+selected = 8;
+});
+
+$( ".id8add" ).mouseleave(function() {
+$(".item_8").removeClass("itemhover");
+mouseOut('8');
+selected = 1;
+});
+
+$( ".id9add" ).hover(function() {
+$(".item_9").addClass("itemhover");
+mouseOver('9');
+selected = 9;
+});
+
+$( ".id9add" ).mouseleave(function() {
+$(".item_9").removeClass("itemhover");
+mouseOut('9');
+selected = 1;
+});
+
+$( ".id10add" ).hover(function() {
+$(".item_10").addClass("itemhover");
+mouseOver('10');
+selected = 10;
+});
+
+$( ".id10add" ).mouseleave(function() {
+$(".item_10").removeClass("itemhover");
+mouseOut('10');
+selected = 1;
+});
+
+$( ".id11add" ).hover(function() {
+$(".item_11").addClass("itemhover");
+mouseOver('11');
+selected = 11;
+});
+
+$( ".id11add" ).mouseleave(function() {
+$(".item_11").removeClass("itemhover");
+mouseOut('11');
+selected = 1;
+});
+
+document.getElementById("menu_item_1").onmouseover = function() {mouseOver('1'); selected = 1};
+document.getElementById("menu_item_1").onmouseout = function() {mouseOut('1'); selected = 1};
+
+document.getElementById("menu_item_2").onmouseover = function() {mouseOver('2'); selected = 2};
+document.getElementById("menu_item_2").onmouseout = function() {mouseOut('2'); selected = 1};
+
+document.getElementById("menu_item_3").onmouseover = function() {mouseOver('3'); selected = 3};
+document.getElementById("menu_item_3").onmouseout = function() {mouseOut('3'); selected = 1};
+
+document.getElementById("menu_item_4").onmouseover = function() {mouseOver('4'); selected = 4};
+document.getElementById("menu_item_4").onmouseout = function() {mouseOut('4'); selected = 1};
+
+document.getElementById("menu_item_5").onmouseover = function() {mouseOver('5'); selected = 5};
+document.getElementById("menu_item_5").onmouseout = function() {mouseOut('5'); selected = 1};
+
+document.getElementById("menu_item_6").onmouseover = function() {mouseOver('6'); selected = 6};
+document.getElementById("menu_item_6").onmouseout = function() {mouseOut('6'); selected = 1};
+
+document.getElementById("menu_item_7").onmouseover = function() {mouseOver('7'); selected = 7};
+document.getElementById("menu_item_7").onmouseout = function() {mouseOut('7'); selected = 1};
+
+document.getElementById("menu_item_8").onmouseover = function() {mouseOver('8'); selected = 8};
+document.getElementById("menu_item_8").onmouseout = function() {mouseOut('8'); selected = 1};
+
+document.getElementById("menu_item_9").onmouseover = function() {mouseOver('9'); selected = 9};
+document.getElementById("menu_item_9").onmouseout = function() {mouseOut('9'); selected = 1};
+
+document.getElementById("menu_item_10").onmouseover = function() {mouseOver('10'); selected = 10};
+document.getElementById("menu_item_10").onmouseout = function() {mouseOut('10'); selected = 1};
+
+document.getElementById("menu_item_11").onmouseover = function() {mouseOver('11'); selected = 11};
+document.getElementById("menu_item_11").onmouseout = function() {mouseOut('11'); selected = 1};
+
+function mouseOver(type) {
+if(type == "1"){
+    document.getElementById("menu_text_1").style.display = "block";
+} else if(type == "2"){
+    document.getElementById("menu_text_2").style.display = "block";
+}else if(type == "3"){
+    document.getElementById("menu_text_3").style.display = "block";
+}else if(type == "4"){
+    document.getElementById("menu_text_4").style.display = "block";
+}else if(type == "5"){
+    document.getElementById("menu_text_5").style.display = "block";
+}else if(type == "6"){
+    document.getElementById("menu_text_6").style.display = "block";
+}else if(type == "7"){
+    document.getElementById("menu_text_7").style.display = "block";
+}else if(type == "8"){
+    document.getElementById("menu_text_8").style.display = "block";
+}else if(type == "9"){
+    document.getElementById("menu_text_9").style.display = "block";
+}else if(type == "10"){
+    document.getElementById("menu_text_10").style.display = "block";
+}else if(type == "11"){
+    document.getElementById("menu_text_11").style.display = "block";
+}
+}
+
+function mouseOut(type) {
+if(type == "1"){
+    document.getElementById("menu_text_1").style.display = "none";
+} else if(type == "2"){
+    document.getElementById("menu_text_2").style.display = "none";
+}else if(type == "3"){
+    document.getElementById("menu_text_3").style.display = "none";
+}else if(type == "4"){
+    document.getElementById("menu_text_4").style.display = "none";
+}else if(type == "5"){
+    document.getElementById("menu_text_5").style.display = "none";
+}else if(type == "6"){
+    document.getElementById("menu_text_6").style.display = "none";
+}else if(type == "7"){
+    document.getElementById("menu_text_7").style.display = "none";
+}else if(type == "8"){
+    document.getElementById("menu_text_8").style.display = "none";
+}else if(type == "9"){
+    document.getElementById("menu_text_9").style.display = "none";
+}else if(type == "10"){
+    document.getElementById("menu_text_10").style.display = "none";
+}else if(type == "11"){
+    document.getElementById("menu_text_11").style.display = "none";
+}
+}
+
+function mouseClick(a) {
+if(selected == 1){
+$.post('http:///champion_animationsmenu/escape', JSON.stringify({}));
+}
+if(selected == 2){
+$.post('http:///champion_animationsmenu/anlehnen', JSON.stringify({}));
+}
+if(selected == 3){
+$.post('http:///champion_animationsmenu/arme', JSON.stringify({}));
+}
+if(selected == 4){
+$.post('http:///champion_animationsmenu/kniehen', JSON.stringify({}));
+}
+if(selected == 5){
+$.post('http:///champion_animationsmenu/ergeben', JSON.stringify({}));
+}
+if(selected == 6){
+$.post('http:///champion_animationsmenu/sitzen', JSON.stringify({}));
+}
+if(selected == 7){
+$.post('http:///champion_animationsmenu/doggym', JSON.stringify({}));
+}
+if(selected == 8){
+$.post('http:///champion_animationsmenu/dance', JSON.stringify({}));
+}
+if(selected == 9){
+$.post('http:///champion_animationsmenu/doggyf', JSON.stringify({}));
+}
+if(selected == 10){
+$.post('http:///champion_animationsmenu/bewusst', JSON.stringify({}));
+}
+if(selected == 11){
+$.post('http:///champion_animationsmenu/superman', JSON.stringify({}));
+}
+}
+
+window.onkeyup = function(e)
+{
+if(e.key == "z") {
+    mouseClick();
+    $("body").hide();
+    $.post('http:///champion_animationsmenu/escape', JSON.stringify({}));
+}
+else if(e.key == "Z") {
+    mouseClick();
+    $("body").hide();
+    $.post('http:///champion_animationsmenu/escape', JSON.stringify({}));
+}
+}
+</script>

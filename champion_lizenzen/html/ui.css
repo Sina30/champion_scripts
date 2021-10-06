@@ -1,0 +1,96 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    display: none;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    margin: auto;
+    width: 650px;
+    border-top: 1vh #ff9800 solid;
+    height: 700px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 25px;
+}
+
+.head-line1 {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+p {
+    position: relative;
+    font-size: 18px;
+    left: 30px;
+}
+
+.head-line2 {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+}
+
+.content {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 525px;
+    top: 35px;
+}
+
+.content-elem {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    height: 65px;
+    outline-color: grey;
+    padding: 10px;
+    margin-left: -12px;
+    margin-top: -12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.content-elem i {
+    color: grey;
+    position: relative;
+    font-size: 35px;
+    line-height: 65px;
+    display: inline-block;
+    left: 15px;
+}
+
+.span {
+    color: #ff9800;
+}
+
+.content-elem p {
+    position: relative;
+    left: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    bottom: 35px;
+}
+
+body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+  }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html land="de">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://kit.fontawesome.com/b79135342d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>by champion</title>
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div class="ui" id="ui" style="display: none">
+            <div class="left_sidebar">
+                <div class="info">
+                    <img class="icon" src="https://i.imgur.com/8WRAMuo.png">
+                    <h2 id="sidebar_info_garagepoint">Garage</h2>
+                </div>
+
+                <div class="action">
+                    <p class="title">Aktionen</p>
+                    <button id="insert_vehicle"><span>Einparken</span></button>
+                    <button id="out_vehicle"><span>Ausparken</span></button>
+                </div>
+            </div>
+            <section class="getout_vehicle" style="display: none;">
+                <div class="header_bg"><div class="header"><h1>Ausparken</h1><button class="closepanel"><i class="fas fa-times"></i></button></div></div>
+                <hr class="linie">
+                <div class="cars">
+                </div>
+                <div class="footer">
+                    <button id="getout_vehicle_button"><i class="fas fa-car"></i> Ausparken</button>
+                </div>
+            </section>
+
+            <section class="putin_vehicle" style="display: block;">
+                <div class="header_bg"><div class="header"><h1>Einparken</h1><button class='closepanel'><i class="fas fa-times"></i></button></div></div>
+                <hr class="linie">
+                <div class="cars">
+                    <!--  -->
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                     <!--  -->
+                </div>
+                <div class="footer">
+                    <button id="putin_vehicle_button"><i class="fas fa-car"></i> Einparken</button>
+                </div>
+            </section>
+        </div>   
+        
+        <div class="ui2" style="display: block;">
+            <div class="left_sidebar">
+                <div class="info">
+                    <img class="icon" src="https://i.imgur.com/8WRAMuo.png">
+                    <h1 id="sidebar_info_impoundpoint">Abschlepphof</h1>
+                </div>
+
+                <div class="action">
+                    <p class="title">Aktionen</p>
+                    <button id="impound_action_button"><span>Freigeben</span></button>
+                </div>
+            </div>
+            <section class="impound" style="display: block;">
+                <div class="header_bg"><div class="header"><h1>Abschlepphof</h1><button class="closepanel"><i class="fas fa-times"></i></button></div></div>
+                <hr class="linie">
+                <div class="cars">
+                    <!--  -->
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                   <button class="car" id="car-' + (car.plate).replace(' ', '_') + '"><i class="fas fa-car"></i><h3>' + car.labelname + '</h3><p>' + car.plate + '</p></button>
+                    <!--  -->
+                </div>
+                <div class="footer">
+                    <button id="getout_impound_button"><i class="fas fa-car"></i> Freigeben</button>
+                </div>
+            </section>
+        </div>
+
+        <script src="index.js" type="text/javascript"></script>
+    </body>
+</html>

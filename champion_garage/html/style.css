@@ -1,0 +1,330 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+*{
+	background-image: url('../img/samsung.png');
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ui {
+    position: absolute;
+    width: 1000px;
+    height: 400px;
+    top: 50%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+#putin_vehicle_button span {
+    color: #ff9800;
+}
+
+.ui2 {
+    position: absolute;
+    width: 1000px;
+    height: 400px;
+    top: 50%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+
+.left_sidebar {
+    position: absolute;
+    width: 18.55vw;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin-left: -400px;
+}
+
+.info img {
+    position: relative;
+    left: 35%;
+    transform: translateX(-50%);
+    margin-top: -42px
+}
+
+.linie {
+    color: #ff9800;
+    margin-left: 205px;
+    width: 998px;
+}
+
+.info h1 {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 35%;
+    font-size: 30px;
+}
+
+.info h2 {
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 23%;
+    font-size: 30px;
+}
+
+.action {
+    position: absolute;
+    width: 100%;
+    height: 215px;
+    bottom: 40px;
+}
+
+.action .title {
+    margin-left: 10px;
+    opacity: 70%;
+    color: #fff;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.action button {
+    width: 100%;
+    height: 65px;
+    outline: none;
+    border: none;
+    color: white;
+    background: none;
+    text-align: left;
+}
+
+.action button span {
+    color: white;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+
+.action #insert_vehicle {
+    border-left: 5px solid #ff9800;
+    color: #ff9800;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
+
+.action #out_vehicle {
+    color: #fff;
+    background-color: transparent;
+    font-weight: normal;
+}
+
+.action #impound_action_button {
+    border-left: 5px solid #ff9800;
+    color: #ff9800;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+
+}
+
+section {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 1205px;
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.icon {
+    position: relative;
+    top: 70px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: 3.0vw;
+}
+
+.icon2 {
+    position: relative;
+    top: 220px;
+    width: 100px;
+    height: 80px;
+    display: block;
+    margin-left: 3.0vw;
+}
+
+.header_bg {
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+    border-top-right-radius: 10px;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.header h1 {
+    margin-top: 5px;
+    margin-left: 230px;
+    color: white;
+    display: inline-block;
+    font-size: 35px;
+    font-family: sans-serif;
+}
+
+.header button {
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    height: 50px;
+    width: 50px;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.header button i {
+    position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #fff;
+    transition: 1s;
+}
+
+.header button i:hover {
+    color: #ff9800;
+}
+
+
+.cars {
+    position: absolute;
+    width: 79%;
+    height: 308px;
+    margin-left: 240px;
+    margin-top: 20px;
+    overflow-y: auto;
+}
+
+.car {
+    display: inline-block;
+    width: 230px;
+    height: 100px;
+    margin-left: 55px;
+    transition: .5s;
+    margin-top: 10px;
+    background-color: rgba(114, 114, 114, 0.7);
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    text-align: left;
+}
+
+.car:hover {
+    border-left: #ff9800 5px solid;
+    background-size: 200% 200%;
+    background-position: 100% 100%;  
+}
+
+
+.car i {
+    position: absolute;
+    margin-top: 7.5px;
+    margin-left: 5px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.car h3 {
+    margin-top: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.car p {
+    text-align: center;
+    color: #fff;
+}
+
+.car-info {
+    display: inline-block;
+    width: 200px;
+    height: 55px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #555555;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    text-align: left;
+}
+
+.car-info i {
+    position: absolute;
+    margin-top: -7.5px;
+    margin-left: 5px;
+    font-size: 40px;
+}
+
+.car-info p {
+    position: relative;
+    left: 50px;
+    line-height: 15px;
+    color: rgb(66, 66, 66);
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 55px;
+    bottom: 0;
+}
+
+.footer button {
+    position: absolute;
+    left: -173px;
+    height: 105px;
+    width: 310px;
+    margin-top: -75px;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    color: white;
+    font-size: 15px;
+    transition: 1s;
+    background-color: transparent;
+}
+
+.footer button:hover {
+    border: 2px solid #ff9800;
+    color: #ff9800;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #232323;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff9800;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -1,0 +1,409 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-ExtraLight.ttf') format('truetype');
+}
+
+* {
+    font-family: Poppins;
+}
+
+.container {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 740px;
+    width: 600px;
+    margin: auto;
+    border-radius: 25px;
+    border: #ff9800 2px solid;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+
+.inv-label {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 2%;
+    font-size: 30px;
+    display: inline-block;
+    color: #ff9800;
+}
+
+.desc {
+    color: white;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    font-size: 25px;
+    top: 8%;
+}
+
+.ausgewaehlttext {
+    color: white;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 35%;
+    font-size: 20px;
+    top: 100%;
+    width: 500px;
+}
+
+.inv-head-btn {
+    left:-10%;
+    top: 70%;
+    font-size: 20px;
+    transform: translate(-50%,-50%);
+    position: relative;
+    float: right;
+    text-align: left;
+    display: inline-block;
+    width: 150px;
+    height: 45px;
+}
+
+.inv-item-name {
+    float: left;
+    display: inline-block;
+	top: -472px;
+	left: 735px;
+}
+
+
+.inv-head-btn2 {
+    position: relative;
+    float: right;
+    display: inline-block;
+    width: 150px;
+    height: 45px;
+    top: 15px;
+}
+
+.inv-head-btn p {
+    position: relative;
+    color: #ff9800;
+    bottom: -10px;
+    width: 200%;
+}
+
+
+#refresh {
+    background-color: #ff9800;
+}
+
+#close {
+    margin-top: 5%;
+    width: 5px;
+    margin-left: 550px;
+    transition: .5s;
+}
+
+#close:hover {
+    opacity: .5;
+}
+
+
+.inv-cont {
+    position: absolute;
+    left: 50px;
+    top: 125px;
+    width: 90%;
+    height: 425px;
+    overflow: scroll;
+}
+
+.inv-cont2 {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 375px;
+    top: 50px;
+    overflow: scroll;
+}
+
+.inv-cont-elem {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-left: 50px;
+    background-color: rgba(48, 48, 48, 0.6);
+    display: inline-block;
+    border-radius: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 55px;
+    -webkit-box-shadow: inset 1px 0px 26px -21px rgba(0,0,0,1);
+    -moz-box-shadow: inset 1px 0px 26px -21px rgba(0,0,0,1);
+    box-shadow: inset 1px 0px 26px -21px rgba(0,0,0,1);
+    transition: .5s;
+}
+
+.inv-cont-elem:hover {
+    background-color: #ff9800;
+}
+
+.inv-cont-elem2 {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-top: -325px;
+    margin-left: 50px;
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 55px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.116);
+}
+
+.inv-close {
+    position: absolute;
+    left: 50px;
+    top: 5px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+}
+
+.inv-close2 {
+    position: relative;
+    left: 50px;
+    top: 50px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    padding: 55px;
+    width: 80px;
+    text-align: center;
+}
+
+.selected {
+    background-color: #ff9800;
+}
+
+.selected2 {
+    background-color: #ff9800;
+}
+
+.sub-container {
+    display: block;
+    position: relative;
+    width: 600px;
+    height: 75px;
+    background-color: transparent;
+    margin: auto;
+    top: 580px;
+}
+
+.sub-container2 {
+    display: block;
+    position: relative;
+    width: 600px;
+    height: 75px;
+    background-color: transparent;
+    margin: auto;
+    top: 49px;
+}
+
+
+.sub-containerhead2 {
+    position: relative;
+    width: 100%;
+    height: 7px;
+    background-color: rgb(255, 255, 255); 
+    border-radius: 11px 11px 0 0;
+    display: inline-block;
+ }
+ 
+
+.sub-container-actions {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 10px;
+    float: left;
+    display: inline-block;
+}
+
+.sub-container-actions2 {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 10px;
+    float: left;
+    display: inline-block;
+}
+
+.sub-container-actions-elem1 {
+    position: relative;
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    font-size: 20px;
+    left: 10px;
+    color: white;
+    background-color: rgba(48, 48, 48, 0.6);
+    display: inline-block;
+    bottom: 100px;
+    top: -30px;
+    border-radius: 25px;
+    -webkit-box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+    -moz-box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+    box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    transition: .5s;
+}
+
+.sub-container-actions-elem2 {
+    position: relative;
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    left: 32px;
+    background-color: rgba(48, 48, 48, 0.6);
+    display: inline-block;
+    bottom: 100px;
+    top: -30px;
+    border-radius: 25px;
+    -webkit-box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+    -moz-box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+    box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    transition: .5s;
+}
+
+.inputbox {
+    background-color: rgba(48, 48, 48, 0.6);
+    width: 457px;
+    border-radius: 25px;
+    height: 40px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 0%;
+    position: absolute;
+}
+
+.sub-container-actions-elem3 {
+    position: relative;
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 25px;
+    left: 53px;
+    color: white;
+    background-color: rgba(48, 48, 48, 0.6);
+    display: inline-block;
+    bottom: 100px;
+    top: -30px;
+    -webkit-box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+    -moz-box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+    box-shadow: inset 1px 0px 26px -22px rgba(0,0,0,1);
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    transition: .5s;
+}
+
+.sub-container-actions-elem3:hover {
+    background-color: #ff9800;
+}
+
+.sub-container-actions-elem2:hover {
+    background-color: #ff9800;
+}
+.sub-container-actions-elem1:hover {
+    background-color: #ff9800;
+}
+
+.sub-cont-number {
+    position: relative;
+    outline-offset: -3px;
+    border: 1px solid grey;
+    background-color: transparent;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    width: 40%;
+    top: -130px;
+    height: 40%;
+    float: right;
+    outline: none;
+    display: inline-block;
+    text-align: center;
+    bottom: 60px;
+    right: 175px;
+    line-height: 50px;
+    vertical-align: middle;
+    color: white;
+    word-wrap: break-word;
+    white-space: pre-line;
+    overflow: hidden;
+    font-size: large;
+    transition: .5s;
+}
+
+h7 {
+    color: white;
+    position: absolute;
+    top: -15px;
+    left: 110px;
+    font-size: large;
+    z-index: 1;
+} 
+
+
+.sub-cont-number:focus {
+    border: 1px solid #ff9800;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e8291c;
+    border-radius: 20px;
+    -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+
+
+.nobr { white-space: nowrap }
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+  }

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notifications</title>
+    <meta charset="UTF-8">
+  </head>
+  <style>
+    .notification {
+      width:300px;
+      background-color:rgba(20,20,20,0.7);
+      margin:8px 0px 8px 0px;
+      padding-bottom:8px;
+      box-shadow:8px 8px 10px black;
+      border-bottom-left-radius:10px;
+      border-bottom-right-radius:10px;
+      border-top-right-radius:10px;
+    }
+    #announcementbox {
+      position:absolute;
+      width:600px;
+      top:-500px;
+      left:50%;
+      background-color:rgba(20,20,20,0.7);
+      margin:0px -300px;
+      padding-bottom:8px;
+      box-shadow:8px 8px 10px black;
+      border-bottom-left-radius:10px;
+      border-bottom-right-radius:10px;
+      border-top-right-radius:10px;
+      transition:top 0.8s ease-out;
+    }
+  </style>
+  <script>
+    window.addEventListener("message", (event) => {
+      if(event.data.color === false) {
+        if(document.getElementById("announcement").innerText == "") {
+          document.getElementById("announcementtitle").innerText = event.data.title;
+          document.getElementById("announcement").innerText = event.data.text;
+          document.getElementById("announcementbox").style.top = "-" + (document.getElementById("announcementbox").getBoundingClientRect().height + 100) + "px";
+          setTimeout(() => {
+            document.getElementById("announcementbox").style.top = "8%";
+            setTimeout(() => {
+              document.getElementById("announcementbox").style.transitionDuration = "5s";
+              document.getElementById("announcementbox").style.top = "12%";
+              setTimeout(() => {
+                document.getElementById("announcementbox").style.transitionDuration = "0.8s";
+                document.getElementById("announcementbox").style.top = "-" + (document.getElementById("announcementbox").getBoundingClientRect().height + 100) + "px";
+                setTimeout(() => {
+                  document.getElementById("announcement").innerText = "";
+                }, 800);
+              }, 8000);
+            }, 800);
+          }, 400);
+        }
+      } else {
+        let div_notification = document.createElement("div");
+        div_notification.classList.add("notification");
+        div_notification.innerHTML = "<div style=\"height:16px;background-color:rgb(20,20,20, 0.5);width:100%;margin:0px;overflow:hidden;border-top-right-radius:10px;\"><div style=\"transform:rotate(40deg) scaleY(3);background-color:" + event.data.color + ";width:90px;height:50px;margin-left:-20px;\"></div><div style=\"transform:rotate(40deg) scaleY(3);background-color:" + event.data.color + ";width:15px;height:50px;margin-left:110px;margin-top:-50px;\"></div><div style=\"transform:rotate(40deg) scaleY(3);background-color:" + event.data.color + ";width:15px;height:50px;margin-left:150px;margin-top:-50px;\"></div><div style=\"transform:rotate(40deg) scaleY(3);background-color:" + event.data.color + ";width:15px;height:50px;margin-left:190px;margin-top:-50px;\"></div><div style=\"transform:rotate(40deg) scaleY(3);background-color:" + event.data.color + ";width:15px;height:50px;margin-left:230px;margin-top:-50px;\"></div></div>";
+        if(event.data.title != "") {
+          div_notification.innerHTML += "<p style=\"color:white;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:20px;margin:8px;\">" + event.data.title + "</p>";
+        }
+        div_notification.innerHTML += "<p style=\"color:white;font-family:Arial, Helvetica, sans-serif;font-size:16px;margin:8px;\">" + event.data.text + "</p>";
+        document.querySelector("main").insertBefore(div_notification, document.querySelector("main").firstChild);
+        div_notification.style.marginTop = "-" + (div_notification.getBoundingClientRect().height + 25) + "px";
+        div_notification.style.marginBottom = "33px";
+        setTimeout(() => {
+          div_notification.style.transition = "margin 0.8s ease-in-out";
+          div_notification.style.marginTop = "8px";
+          div_notification.style.marginBottom = "0px";
+          setTimeout(() => {
+            div_notification.style.marginLeft = "0px";
+            setTimeout(() => {
+              div_notification.style.marginLeft = "-400px";
+              setTimeout(() => {
+                div_notification.remove();
+                delete div_notification;
+              }, 800);
+            }, event.data.time);
+          }, 800);
+        }, 400);
+      }
+    });
+  </script>
+  <body style="overflow:hidden;background-color:transparent;margin:0px;user-select:none;">
+    <header></header>
+    <main style="padding:10px;">
+      <div id="announcementbox">
+        <div style="height:20px;background-color:rgb(20,20,20,0.5);width:100%;margin:0px;overflow:hidden;border-top-right-radius:10px;">
+          <div style="transform:rotate(40deg) scaleY(3);background-color:#ff9800;width:180px;height:90px;margin-left:-20px;"></div>
+          <div style="transform:rotate(40deg) scaleY(3);background-color:#ff9800;width:15px;height:60px;margin-left:220px;margin-top:-70px;"></div>
+          <div style="transform:rotate(40deg) scaleY(3);background-color:#ff9800;width:15px;height:60px;margin-left:280px;margin-top:-70px;"></div>
+          <div style="transform:rotate(40deg) scaleY(3);background-color:#ff9800;width:15px;height:60px;margin-left:340px;margin-top:-70px;"></div>
+          <div style="transform:rotate(40deg) scaleY(3);background-color:#ff9800;width:15px;height:60px;margin-left:400px;margin-top:-70px;"></div>
+          <div style="transform:rotate(40deg) scaleY(3);background-color:#ff9800;width:15px;height:60px;margin-left:460px;margin-top:-70px;"></div>
+        </div>
+        <p id="announcementtitle" style="color:white;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:20px;margin:8px;">ANKÜNDIGUNG</p>
+        <p id="announcement" style="color:white;font-family:Arial, Helvetica, sans-serif;font-size:16px;margin:8px;"></p>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

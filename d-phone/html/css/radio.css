@@ -1,0 +1,913 @@
+.phone-radio {
+    height: 100%;
+    width: 100%;
+    background: #222;
+    overflow: hidden;
+    display: none;
+}
+
+
+.phone-app-header {
+    position: relative;
+    font-family: Arial;
+    font-size: 2.5vh;
+    top: 8%;
+    left: 0%;
+    width: 100%;
+    height: 4vh;
+    border-bottom: 0px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+.phone-radio-sector {
+    display: block;
+    position: absolute;
+    height: 84%;
+    width: 100%;
+    top: 16%;
+}
+
+.phone-radio-list {
+    position: absolute;
+    height: 98.2%;
+    top: 0vh;
+    width: 99%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#phone-radio-return {
+    position: relative;
+    left: 3vh;
+    top: 0.5vh;
+    height: 3vh;
+    width: 3vh;
+}
+
+#phone-radio-return>i {
+    color: rgb(27, 131, 216);
+}
+
+#phone-radio-return>i:hover {
+    color: rgb(12, 12, 12)
+}
+
+.phone-radio-frequenz-inputs {
+    position: relative;
+    height: 6vh;
+    width: 100%;
+}
+
+.phone-radio-frequenz-input {
+    position: relative;
+    top: 1.5vh;
+    height: 4.5vh;
+    left: 7%;
+    line-height: 25px;
+    background: #111;
+    padding-left: 15px;
+    font-family: Arial;
+    font-size: 1.75vh;
+    border: 1px solid #000 !important;
+    width: 90%;
+    border-radius:5px;
+    outline: none;
+    color: #fff;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.phone-radio-frequenz-input:focus {
+    opacity: .8;
+    border: 1px solid #fff !important;
+    transition: .5s;
+}
+
+.phone-frequenz-button {
+    position: relative;
+    height: 5vh;
+    width: 100%;
+    font-family: 'Samsung Sans thin';
+    font-weight: 400;
+    left: 0%;
+    top: 1vh;
+}
+
+#phone-frequenz-join-button {
+    position: relative;
+    background-color: #111;
+    width: 90%;
+    height: 80%;
+    left: 7%;
+    top: 10%;
+    border: none;
+    border: 1px solid #000 !important;
+    outline: none;
+    font-size: 18px;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    border-radius:5px;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#phone-frequenz-join-button:hover {
+    opacity: .8;
+    transition: .5s;
+    background: #fff;
+    color: white;
+}
+
+#phone-frequenz-leave-button {
+    position: relative;
+    background-color: darkred;
+    width: 90%;
+    height: 80%;
+    left: 7%;
+    top: 10%;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border: 1px solid #000 !important;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    border-radius:5px;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#phone-frequenz-leave-button:hover {
+    opacity: .8;
+    transition: .5s;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
+
+
+.funk-app {
+    display: none;
+    height: 120%;
+    width: 100%;
+    background: #232323;
+    overflow: hidden;
+}
+
+.funk-header {
+    position: absolute;
+    top: 5vh;
+    width: 100%;
+    height: 5vh;
+    border-bottom: .2vh solid rgba(20, 23, 26, 0.37);
+}
+
+.funk-header-tab {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    text-align: center;
+    line-height: 5vh;
+    font-size: 2.4vh;
+    color: white;
+    transition: .07s;
+}
+
+.funk-header-tab:hover {
+    color: #52e6af;
+}
+
+.selected-funk-header-tab {
+    border-bottom: 0vh solid #52e6af;
+    color: #52e6af;
+    font-size: 22px;
+}
+
+.containers {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 5px;
+  margin-top: 27px;
+  font-family: Arial;
+  cursor: pointer;
+  font-size: 19px;
+  width: 190px;
+  height: 30px;
+background: #111;
+  letter-spacing: 1px;
+  line-height: 31px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 7px;
+  -webkit-user-select: none;
+  margin-left: 50px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containers input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: -14px;
+  height: 30px;
+  width: 30px;
+  background-color: #111;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+
+/* When the radio button is checked, add a blue background */
+.containers input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containers input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containers .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 5%;
+	background: #fff;
+}
+
+.funk-app-header {
+    position: relative;
+    padding: 5vh 0 0 1.85vh;
+    font-family: 'Heebo', sans-serif;
+    font-size: 2vh;
+}
+
+.funk-home-tab {
+    display: block;
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    top: 12vh;
+    overflow: hidden;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+}
+
+.funk-home-tab::-webkit-scrollbar {
+    width: .7vh;
+}
+
+.funk-home-tab::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+}
+
+.funk-home-tab::-webkit-scrollbar-track {
+    background-color: #ebebeb00;
+}
+
+.funk-mentions-tab {
+    display: none;
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    top: 12vh;
+    overflow: hidden;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+}
+
+.funk-mentions-tab::-webkit-scrollbar {
+    width: .7vh;
+}
+
+.funk-mentions-tab::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+}
+
+.funk-mentions-tab::-webkit-scrollbar-track {
+    background-color: #ebebeb00;
+}
+
+.funk-hashtags-tab {
+    display: none;
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    top: 12vh;
+    overflow: hidden;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+}
+
+.funk-hashtags-tab::-webkit-scrollbar {
+    width: .7vh;
+}
+
+.funk-hashtags-tab::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+}
+
+.funk-hashtags-tab::-webkit-scrollbar-track {
+    background-color: #ebebeb00;
+}
+
+.funk-tweet {
+    position: relative;
+    height: auto;
+    width: 100%;
+    border-top: 2px solid rgba(20, 23, 26, 0.37);
+    margin-bottom: 2.5vh;
+}
+
+.funk-tweet-hashtag {
+    position: relative;
+    height: auto;
+    width: 100%;
+    border-top: 2px solid rgba(20, 23, 26, 0.37);
+    margin-bottom: 2.5vh;
+}
+
+.funk-mentioned-tweet {
+    position: relative;
+    height: auto;
+    width: 100%;
+    border-top: 2px solid rgba(20, 23, 26, 0.37);
+    margin-bottom: 2.5vh;
+}
+
+.twt-img {
+    position: absolute;
+    left: 1vh;
+    height: 100%;
+    width: 100%;
+}
+
+.twt-img > img {
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+}
+
+.tweet-reply {
+    position: absolute;
+    top: 5.5vh;
+    margin-bottom: 5vh;
+    margin-left: 2.4vh;
+    color: rgba(0, 0, 0, 0.8);
+    transition: .05 linear;
+    z-index: 100;
+    pointer-events: all;
+}
+
+.tweet-reply:hover i {
+    color: rgba(0, 0, 0, 1.0);
+}
+
+.tweet-tweeter {
+    padding-left: 6vh;
+    padding-top: .6vh;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.1vh;
+}
+
+.tweet-tweeter > span {
+    position: relative;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.0vh;
+    top: -.1vh;
+}
+
+.tweet-message {
+    margin-top: .3vh;
+    padding-left: 6vh;
+    top: .5vh;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.3vh;
+    padding-bottom: 1vh;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.funk-new-tweet {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 5.5vh;
+    height: 5.5vh;
+    background-color: #1DA1F2;
+    margin: 2.2vh;
+    border-radius: 50%;
+    text-align: center;
+    transition: .1s;
+}
+
+.radio-image {
+    max-width: 325px!important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    pointer-events:none;
+  }
+  
+  #cursor {
+    position: absolute;
+    z-index: 999999;
+    display: none;
+  }
+  
+  b {
+    color:#fff;
+  }
+  
+  
+  .card-header:first-child {
+    border-radius: 0px;
+    width: 100%;
+  }
+  
+  .card-body {
+  padding: 1rem;
+  }
+  
+  .card {
+    background-color: #232323;
+    border-radius: 0px;
+    top: -17px;
+  }
+  
+  p.title {
+    color: #fff;
+    text-align: center;
+    font-family: PEL;
+    margin-top: 0px;
+    font-size: 16px;
+    margin-left:25px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  p.desc {
+    color: #52e6af;
+    text-align: center;
+    font-family: PEL;
+    margin-left:25px;
+    margin-top: -7px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  
+  
+  .bg-red {
+    background-color: transparent;
+    top: 0px;
+  }
+  
+  .nils {
+    font-size: 12px;
+    color: #52e6af;
+    margin-left: 235px;
+  }
+  
+  .input-group-text {
+    border: 2px solid transparent;
+    background-color:transparent;
+    color:transparent;
+  }
+  
+  .input-group>.custom-file, .input-group>.custom-select, .input-group>.form-control, .input-group>.form-control-plaintext {
+    min-width: 180px;
+  }
+  
+  .form-controls {
+    border-style: ridge;
+    border-color: #181818;
+    background-color: #1a1a1a;
+    width: 250px;
+    color:#52e6af;
+    height: 45px;
+    text-align: center;
+    margin-top: 160px;
+    margin-left: 32px;
+    font-weight: bold;
+    padding: .375rem .75rem;
+    border-radius: 6px;
+  }
+
+  
+  .radio-container {
+    border: 5px solid black;
+    border-radius: 8px;
+    width: 15.0vw!important;
+    height: 43.2vh;
+    position: fixed;
+    right: 19vw;
+    bottom: -49.5vh;
+    padding-bottom:3vh;
+    background-color:#232323;
+    opacity: 0.5;
+  }
+  
+  
+  .radio-container > .statusbar {
+    border-radius: 50px 10px 0 0;
+    position:relative;
+    background-color:#3f51b5;
+    text-align: center;
+    height:3vh;
+    line-height: 3vh;
+  }
+  
+  #draw-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .nils2 {
+    border: 0;
+    background-color:#1a1a1a;
+    text-transform: uppercase;
+    color: white;
+    width: 243px;
+    text-align: center;
+    height: 41px;
+    box-shadow: 3px 3px 3px 0px black;
+    font-weight: bold;
+    position: relative;
+    margin-top: 9px;  
+    margin-left: 35px;
+    outline: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  
+  .nils2:hover {
+    background-color: #52e6af;
+    cursor: pointer;
+  }
+  
+  .nils3 {
+    border: 0;
+    background-color:#1a1a1a;
+    text-transform: uppercase;
+    color: white;
+    width: 243px;
+    text-align: center;
+    height: 41px;
+    box-shadow: 3px 3px 3px 0px black;
+    font-weight: bold;
+    position: relative;
+    margin-top: 17px;
+    margin-left: 35px;
+    outline: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  
+  
+  .nils3:hover {
+      cursor: pointer;
+      background-color: #52e6af;
+  }
+  
+  .radio-container > .connected {
+    background-color: #232323 !important;
+    animation: glowing 3s infinite;
+    font-size: 10px;
+    color: red;
+  }
+  
+  .radio-container > .statusbar > span.title {
+    color: #eceff1 !important;
+    font-weight: bolder;
+  }
+  .radio-container > .statusbar > form#onoff > button {
+    position: absolute;
+    top:0.5vh;
+    right:0;
+    color:#fff;
+    border: none;
+    background: none;
+  }
+  
+  .radio-container > .content {
+    display: inline-block;
+    padding: 1.5rem;
+    align-content: center;
+    margin: auto;
+  }
+  
+  .table-holder {
+    text-align: left;
+    margin:auto;
+    width:100%;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    overflow-y:auto;
+    height: 180px;
+  }
+  
+  th {
+    min-width: 75px;
+  }
+  
+  
+  @keyframes moveOut {
+    from {
+      opacity: 1;
+      bottom: 10vh;
+      /*left: 45vw;*/
+    }
+    to {
+      opacity: 0.5;
+      bottom: -49.5vh;
+      /*left: 1.5vw;*/
+    }
+  }
+  
+  @keyframes moveIn {
+    from {
+      opacity: 0.5;
+      bottom: -49.5vh;
+      /*left: 1.5vw;*/
+    }
+    to {
+      opacity: 1;
+      bottom: 10vh;
+      /*left: 45vw;*/
+    }
+  }
+  
+  @keyframes glowing {
+    0% { background-color: transparent; box-shadow: 0 0 0px #52e6af; }
+    50% { background-color: transparent; box-shadow: 0 0 3px #52e6af; }
+    100% { background-color: transparent; box-shadow: 0 0 0px #52e6af; }
+    }
+
+.funk-new-tweet:hover {
+    background-color: rgb(62, 179, 252);
+}
+
+.funk-new-tweet > i {
+    line-height: 5.5vh;
+    font-size: 2vh;
+    transform: rotate(-20deg);
+    color: white;
+}
+
+.funk-new-tweet-tab {
+    display: none;
+    position: absolute;
+    display: block;
+    top: -100%;
+    height: 100%;
+    width: 100%;
+    background: #F5F8FA;
+    overflow: hidden;
+    z-index: 105;
+}
+
+.funk-new-tweet-header {
+    position: relative;
+    padding: 5vh 0 0 1.85vh;
+    font-family: 'Heebo', sans-serif;
+    font-size: 2vh;
+}
+
+#tweet-new-message {
+    position: absolute;
+    border: none;
+    height: 15vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: rgb(233, 233, 233);
+    outline: none;
+    border-bottom: 2px solid #1da0f200;
+    resize: none;
+    transition: border-bottom 0.1s ease-in-out;
+    font-family: 'Heebo', sans-serif;
+    padding: 0.87vh;
+    font-size: 1.4vh;
+    top: 12vh;
+    width: 22vh;
+    border-radius: 1vh 1vh 0 0 ;
+    box-shadow: inset 0 0 2vh 0 rgba(0, 0, 0, 0.089);
+}
+
+#tweet-new-message::-webkit-scrollbar {
+    display: none;
+}
+
+#tweet-new-message::placeholder {
+    font-size: 1.4vh;
+    font-family: 'Heebo', sans-serif;
+}
+
+#tweet-new-message:focus {
+    border-bottom: .55vh solid #1da0f2b0;
+}
+
+#tweet-new-message:valid {
+    border-bottom: .55vh solid #6ab04c;
+}
+
+.funk-new-tweet-buttons {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5vh;
+}
+
+.funk-new-tweet-button {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 4.5vh;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.5vh;
+    border-top: .3vh solid #6ab04c00;
+    transition: .1s;
+}
+
+.funk-new-tweet-button:hover {
+    border-top: .3vh solid #1DA1F2;
+}
+
+.funk-no-tweets {
+    position: absolute;
+    text-align: center;
+    top: 4vh;
+    width: 100%;
+    font-size: 2vh;
+    font-family: 'Heebo', sans-serif;
+    color: black;
+}
+
+.mentioned-tag {
+    border-bottom: .1vh solid rgba(27, 149, 224, 0);
+    padding-bottom: .3vh;
+    transition: .2s;
+}
+
+.mentioned-tag:hover {
+    color: rgb(19, 103, 155);
+    border-bottom: .1vh solid rgb(27, 149, 224);
+    transition: .2s;
+}
+
+.hashtag-tag-text {
+    border-bottom: .1vh solid rgba(27, 149, 224, 0);
+    padding-bottom: .3vh;
+    transition: .2s;
+}
+
+.hashtag-tag-text:hover {
+    color: rgb(19, 103, 155);
+    border-bottom: .1vh solid rgb(27, 149, 224);
+    transition: .2s;
+}
+
+.funk-hashtag {
+    position: relative;
+    height: 7vh;
+    width: 100%;
+    top: 0;
+    background-color: rgb(238, 238, 238);
+    transition: .2s;
+}
+.funk-hashtag:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+.funk-hashtag-status{
+    position: absolute;
+    top: .8vh;
+    left: 1vh;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.1vh;
+    color: rgb(99, 111, 121);
+}
+
+.funk-hashtag-tag {
+    position: absolute;
+    top: 2.5vh;
+    left: 1vh;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.4vh;
+    color: rgb(66, 66, 66);
+}
+.funk-hashtag-messages {
+    position: absolute;
+    bottom: .8vh;
+    left: 1vh;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.1vh;
+    color: rgb(99, 111, 121);
+}
+.funk-hashtags {
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+.funk-hashtag-tweets {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 30;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.funk-hashtag-tweets::-webkit-scrollbar {
+    width: .2vh;
+}
+
+.funk-hashtag-tweets::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+}
+
+.funk-hashtag-tweets::-webkit-scrollbar-track {
+    background-color: #ebebeb00;
+}
+.ubernils {
+    font-size: 1.5vh;
+    font-weight: bold;
+    margin-top: 12px;
+    background: #111;
+    margin-left: 13px;
+    font-family: Arial;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    width: 130px;
+    border-radius: 6px;
+    color: #fff;
+}
+.titlenils {
+    font-size: 2vh;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-left: 20px;
+    font-family: Arial;
+    background: #111;
+    height: 33px;
+    text-align: center;
+    line-height: 34px;
+    width: 170px;
+    border-radius: 5px;
+    color: #fff;
+}
+.settingsnils {
+    font-size: 2vh;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: -12px;
+    font-family: Arial;
+    background: #111;
+    height: 33px;
+    text-align: center;
+    line-height: 34px;
+    width: 170px;
+    border-radius: 5px;
+    color: #fff;
+}

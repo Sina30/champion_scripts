@@ -1,0 +1,201 @@
+<script src="https://kit.fontawesome.com/de946a5f81.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<div class="givemoney">
+    <div class="head">
+	            <h3>Geld übergeben</h3>
+
+			
+    </div>
+	       <div class="content">
+
+                <input id="aa" placeholder="Anzahl" type="number" autofocus>
+				<button id="ja" class="btn">Bestätigen</button>
+				<button id="no" class="nein">Abbrechen</button>
+        </div>
+     
+</div>
+
+<style lang="scss" scoped>
+    body {
+	display: true;
+	}
+    * {
+        font-family: "Poppins", sans-serif;
+    }
+
+    .clear {
+        clear: both; }
+
+   
+.givemoney {
+	margin-top: 37.3vh;
+	border-radius: 1vh;
+	background-color: rgba(0, 0, 0, .8);
+	margin-left: auto;
+	margin-right: auto;
+	width: 41vh;
+	height: 23.7vh
+}
+
+.givemoney .head {
+	border-top-right-radius: 1vh;
+	border-top-left-radius: 1.7vh;
+	background-color: #ff9900;
+	transform: skewX(40deg);
+	margin: 0 4vh 0 2vh
+}
+
+.givemoney .head h3 {
+	margin-top: 1.5vh;
+	margin-bottom: 1.5vh;
+	font-size: 3vh;
+	color: white;
+	font-weight: 400;
+	margin-left: 3vh;
+	width: 25vh;
+	text-align: left;
+	transform: skewX(-40deg)
+}
+
+.givemoney .head i {
+	font-size: 3.5vh;
+	color: white;
+	text-align: right;
+	margin-right: -2.5vh;
+	margin-top: .5vh;
+	transform: skewX(-40deg)
+}
+
+.givemoney .head i:hover {
+	color: #fff;
+	transition: color .5s
+}
+
+.givemoney .content input {
+	margin-top: 2.5vh;
+	margin-left: 3vh;
+	margin-right: 3vh;
+	width: 35vh;
+	height: 5vh;
+	font-size: 2vh;
+	border-top-color: #00000000;
+	border-left-color: #00000000;
+	border-right-color: #00000000;
+    border-bottom-color: #ff9900;
+	border-style: solid;
+	border-radius: 3px;
+	border-width: 4px;
+
+    -webkit-box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);
+    box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);  
+    transition: all 0.3s ease-in-out;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+}
+
+.givemoney .content input::placeholder {
+	color: white;
+}
+
+.givemoney .content button {
+	font-size: 1.5vh;
+	margin-left: 3vh;
+	height: 4vh;
+	background-color: #ff9900;
+	border-top-color: #ff9900;
+	border-left-color: #ff9900;
+	border-right-color: #ff9900;
+    border-bottom-color: #ff9900;
+	border-style: solid;
+	border-radius: 3px;
+	border-width: 4px;
+	color: white;
+
+    -webkit-box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);
+    box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);  
+}
+
+.givemoney .content button:hover {
+	font-size: 1.5vh;
+	margin-left: 3vh;
+	height: 4vh;
+	background-color: rgba(102, 75, 0, 0.8);
+	background-color: rgba(102, 75, 0, 0.8);
+	border-top-color: rgba(102, 75, 0, 0.8);
+	border-left-color: rgba(102, 75, 0, 0.8);
+	border-right-color: rgba(102, 75, 0, 0.8);
+    border-bottom-color: rgba(102, 75, 0, 0.8);
+	border-style: solid;
+	border-radius: 3px;
+	border-width: 4px;
+
+    -webkit-box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);
+    box-shadow: 11px 10px 58px -22px rgba(0, 0, 0, 0.75);  
+	transition: all 0.3s ease-in-out;
+}
+
+.givemoney .content button.btn {
+	border-radius: .5vh;
+	padding: 2vh;
+	line-height: 0;
+	margin-top: 2vh
+}
+
+.givemoney .content button.nein {
+	border-radius: .5vh;
+	padding: 2vh;
+	line-height: 0;
+	margin-top: 2vh
+
+}
+
+    textarea:focus, input:focus{
+        outline: none;
+    }
+</style>
+<script>
+
+
+				$(document).ready(function(){
+    window.addEventListener('message', function( event ) { 
+      if (event.data.action == 'open') {
+openHTML();
+      }
+	        if (event.data.action == 'close') {
+closeHTML();
+      }
+    });     
+	
+	closeHTML();
+
+
+	function openHTML() {
+                      $('body').css('display', 'block');
+
+                    }
+                    function closeHTML() {
+                      $('body').css('display', 'none');
+
+                    }
+
+                     
+                    $( "#ja" ).click(function() {
+						$("body").fadeOut();
+						var Malfunctions = parseInt(document.getElementById("aa").value);
+
+						      $.post('http://champion_givemoney/givemoney', JSON.stringify({money: Malfunctions}));
+
+                    });     
+					$("#no").click(function () {
+  $("body").fadeOut();
+  $.post('http://champion_givemoney/closethat', JSON.stringify({}));
+});
+                    });     
+
+</script>

@@ -1,0 +1,5 @@
+RegisterNetEvent('OOC')
+AddEventHandler('OOC', function(player, closestPlayer, argString)
+    TriggerClientEvent("champion:notify", player, "OOC (" .. GetPlayerName(player) .. ")", argString, "green", 3500)
+    TriggerClientEvent("champion:notify", closestPlayer, "OOC (" .. GetPlayerName(player) .. ")", argString, "green", 3500)
+end)

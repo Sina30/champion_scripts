@@ -1,0 +1,290 @@
+.phone-gps {
+    height: 100%;
+    width: 100%;
+    background: #222;
+    overflow: hidden;
+    display: none;
+}
+
+.phone-gps-sector {
+    display: block;
+    position: absolute;
+    height: 84%;
+    width: 100%;
+    top: 16%;
+}
+
+.phone-gps-vehiclelist {
+    position: absolute;
+    height: 98.2%;
+    top: 2vh;
+    width: 99%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#phone-gps-return {
+    position: relative;
+    left: 3vh;
+    top: 0.5vh;
+    height: 3vh;
+    width: 3vh;
+}
+
+#phone-gps-return>i {
+    color: rgb(27, 131, 216);
+}
+
+#phone-gps-return>i:hover {
+    color: rgb(12, 12, 12)
+}
+
+.phone-gps-gps-inputs {
+    position: relative;
+    height: 6vh;
+    width: 100%;
+}
+
+.phone-gps-gps-input {
+    position: relative;
+    top: 1.5vh;
+    height: 4.5vh;
+    left: 5%;
+    font-family: 'Samsung Sans medium';
+    font-size: 1.75vh;
+    width: 90%;
+    outline: none;
+    border: none;
+    transition: .5s;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.phone-gps-gps-input:focus {
+    border-bottom: 2px solid rgb(27, 131, 216);
+}
+
+.phone-gps-button {
+    position: relative;
+    height: 5vh;
+    width: 100%;
+    font-family: 'Samsung Sans thin';
+    font-weight: 400;
+    left: 0%;
+    top: 0.8vh;
+}
+
+#phone-gps-orte-button {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 80%;
+    left: 35%;
+    top: 7%;
+    border: none;
+    outline: none;
+    color: black;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#phone-gps-vehicle-button {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 80%;
+    left: 65%;
+    top: -90%;
+    border: none;
+    outline: none;
+    color: black;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+#phone-gps-md {
+    position: relative;
+    background-color: #191919;
+    width: 100%;
+    height: 80%;
+    left: 0%;
+    top: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 1px solid #111 !important;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#phone-gps-pd {
+    position: relative;
+    background-color: #191919;
+    width: 100%;
+    height: 80%;
+    left: 0%;
+    top: 50%;
+    border: none;
+    border-bottom: 1px solid #111 !important;
+    outline: none;
+    color: white;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#phone-gps-schlepp {
+    position: relative;
+    background-color: #191919;
+    width: 100%;
+    height: 80%;
+    left: 0%;
+    border-bottom: 1px solid #111 !important;
+    top: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.garage-vehicles {
+    display: block;
+    position: relative;
+    width: 1110px;
+    height: 660px;
+    top: 350px;
+    left: 450px;
+}
+
+.vehicle {
+    position: relative;
+	width: 125%;
+	margin-top: -350px;
+	height: 7%;
+}
+
+.vehicle-inner {
+    width: 20%;
+    height: 190%;
+    background-color: rgb(17, 17, 17);
+    border-left: 3px solid rgb(255, 0, 0);
+	
+	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+
+    
+    margin-left: 70px;
+
+
+	top: 3%;
+	
+	float: left;
+	margin-bottom: 50px;
+}
+
+
+#phone-gps-lsc {
+    position: relative;
+    background-color: #191919;
+    width: 100%;
+    height: 80%;
+    left: 0%;
+    border-bottom: 1px solid #111 !important;
+    top: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+#phone-gps-vip {
+    position: relative;
+    background-color: #191919;
+    width: 100%;
+    height: 80%;
+    left: 0%;
+    border-bottom: 1px solid #111 !important;
+    top: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+#phone-gps-casino {
+    position: relative;
+    background-color: #191919;
+    width: 100%;
+    height: 80%;
+    left: 0%;
+    border-bottom: 1px solid #111 !important;
+    top: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#phone-gps-phone {
+    position: relative;
+    background-color: #191919;
+    width: 100%;
+    height: 80%;
+    left: 0%;
+    border-bottom: 1px solid #111 !important;
+    top: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+#phone-gps-vehicle-button {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 80%;
+    left: 65%;
+    top: -90%;
+    border: none;
+    outline: none;
+    color: black;
+    font-family: 'Samsung Sans Regular';
+    font-weight: 400;
+    border-radius: 0.25vh;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+}
+

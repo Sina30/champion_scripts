@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-ExtraLight.ttf') format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: #ff9800;
+    font-family: Poppins;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+.main-wrapper {
+    display: block;
+    width: 100vw;
+    margin-top: 6vh;
+    margin-right: 2vw;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 1vh;
+    justify-content: flex-end;
+}
+
+.money {
+    height: 3.25vh;
+    width: 12vw;
+    min-width: fit-content;
+    min-height: fit-content;
+    border-radius: 5px;
+    background-color: #111;
+    border-left: 4px solid #ff9800;
+
+}
+
+.money > i {
+    margin: auto 0;
+    margin-left: .5vw;
+    color: #ff9800;
+}
+
+.money > span {
+    margin: auto 0;
+    margin-left: .5vw;
+    margin-right: .5vw;
+    width: 100%;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.voice {
+    height: 3.25vh;
+    width: 5vw;
+    min-width: fit-content;
+    min-height: fit-content;
+    border-radius: 5px;
+    background-color: #111;
+    border-left: 4px solid #ff9800;
+}
+
+.voice > i {
+    width: 20px;
+    text-align: center;
+    margin: auto 0;
+    margin-left: .5vw;
+    color: #57565c;
+}
+
+.voice > div {
+    display: block;
+    margin: auto
+}
+
+.voice > div > span {
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.funk {
+    height: 3.25vh;
+    width: 7.3vw;
+    min-width: fit-content;
+    min-height: fit-content;
+    border-radius: 5px;
+    background-color: #111;
+    margin-left: 0.5vw;
+    border-left: 4px solid #ff9800;
+}
+
+.funk > i {
+    margin: auto 0;
+    margin-left: .5vw;
+    color: #57565c;
+}
+
+.funk > div {
+    display: block;
+    margin: auto 0;
+}
+
+.funk > div > .headline {
+    margin: auto;
+    font-size: .8rem;
+    text-transform: uppercase;
+    margin-left: .5vw;
+    margin-top: -5px;
+    margin-right: .5vw;
+    color: #ffffffc2;
+}
+
+.funk > div > .status {
+    margin: auto;
+    font-size: .8rem;
+    line-height: 1.2vh;
+    margin-left: .5vw;
+    margin-top: -2px;
+    margin-right: .5vw;
+    color: #ff9800;
+}
+
+.status.status-on {
+    color: #00e640 !important;
+}
+
+.range {
+    font-size: 1.7rem;
+    line-height: 1.2vh;
+}
+
+.range-3 {
+    color: #57565c;
+}
+
+.range-3.range-on {
+    color: #ff9800 !important;
+}
+
+.range-8 {
+    color: #57565c;
+}
+
+.range-8.range-on {
+    color: #ff9800 !important;
+}
+
+.range-15 {
+    color: #57565c;
+}
+
+.range-15.range-on {
+    color: #ff9800 !important;
+}
+
+.range-32 {
+    color: #57565c;
+}
+
+.range-32.range-on {
+    color: #ff9800 !important;
+}

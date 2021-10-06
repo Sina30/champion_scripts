@@ -1,0 +1,193 @@
+body {
+    background: none !important;
+}
+
+#container {
+    font-size: 20px;
+    padding: 25px;
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 400px;
+	height: 180px; 
+	border-left: 1vh solid #ff9800;
+	border-right: 1vh solid #ff9800;
+	background: rgba(0, 0, 0, 0.733);
+	border-radius: 25px;
+
+}
+
+
+button {
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 12px;
+}
+
+input {
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+}
+
+.servername {
+	position: absolute;
+	width: 308px;
+	height: 22px;
+	left: 100px;
+	top: 29px;
+	
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 27px;
+	
+	color: #ff9800;
+	
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+p.online {
+/* Online: 64/64 */
+
+
+position: absolute;
+width: 150px;
+height: 18px;
+left: 190px;
+top: 65px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+p.imdienst {
+/* Zurzeit im Dienst: */
+
+
+position: absolute;
+width: 235px;
+height: 21px;
+left: 31px;
+top: 126px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 18px;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+img.cops {
+	position: absolute;
+	width: 59px;
+	height: 59px;
+	left: 100px;
+	top: 125px;
+	
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+img.medics {
+/* ambulance 1 */
+
+
+position: absolute;
+width: 59px;
+height: 59px;
+left: 290px;
+top: 125px;
+
+background: url(ambulance.png);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+span.cops {
+/* 25 */
+
+
+position: absolute;
+width: 15px;
+height: 18px;
+left: 125px;
+top: 190px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 18px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+span.medics {
+/* 25 */
+
+
+position: absolute;
+width: 15px;
+height: 18px;
+left: 315px;
+top: 190px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 18px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+span.mechaniker {
+/* 25 */
+
+
+position: absolute;
+width: 15px;
+height: 18px;
+left: 365px;
+top: 190px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 18px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+

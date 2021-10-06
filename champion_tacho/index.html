@@ -1,0 +1,220 @@
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+
+</head>
+<body>
+        <div class="bottom">
+
+<div class="vehicleHud">
+    <div id="vehicle-bar">
+        <ul class="bar-itemlist" v-bind:class="{ 'bar-on': engine == true, 'bar-off': engine == false}">
+            <li class="bar-item first">
+                 <!--<img src="https://i.imgur.com/9KQ8cFM.png" class="bar-item-image small" id="off"> -->
+                <img src="https://i.imgur.com/RcKl8s5.png" class="bar-item-image small" id="on">
+            </li>
+            <li class="bar-item">
+                  <!--  <img src="https://i.imgur.com/FmcEyhj.png" class="bar-item-image small" id="locked"> -->
+                <img src="https://i.imgur.com/rVX9JSv.png" class="bar-item-image small" id="unlocked">
+            </li>
+            <!--
+            <li class="bar-item">
+                <img src="../../assets/hud_icons/seatbelt-locked.png" class="bar-item-image small" v-if="seatbelt == true">
+                <img src="../../assets/hud_icons/seatbelt.svg" class="bar-item-image small" v-if="seatbelt == false">
+            </li>
+            -->
+            <li class="bar-item"><img src="speedometer.svg" class="bar-item-image small"> <span id="kmh">187 KM/H</span></li>
+            <!--<li class="bar-item"><img src="../../assets/hud_icons/medical-bag.svg" class="bar-item-image"> <span>{{health}}%</span></li>-->
+        </ul>
+    </div>
+	</div>
+</body>
+<script>
+$(document).ready(function () {
+
+    window.addEventListener("message", function (event) {
+        if (event.data.displayhud == true) {
+            $('body').show();
+			set_speedometer({type: 'kmh', value: event.data.speed});
+            set_speedometer({type: 'liter', value: event.data.tank});
+			set_speedometer({type: 'km', value: 0.0});
+
+        };
+        if (event.data.displayhud == false) {
+
+            $("body").hide();
+			set_speedometer({type: 'kmh', value: 0});
+            set_speedometer({type: 'liter', value: 0});
+            set_speedometer({type: 'km', value: 0.0});
+        };
+		        if (event.data.vehicleon == false) {
+document.getElementById("on").src = "https://i.imgur.com/9KQ8cFM.png";
+
+
+
+        };
+				        if (event.data.vehicleon == true) {
+document.getElementById("on").src = "https://i.imgur.com/RcKl8s5.png";
+
+
+        };
+		
+				        if (event.data.locked == false) {
+document.getElementById("unlocked").src = "https://i.imgur.com/rVX9JSv.png";
+
+        };
+				        if (event.data.locked == true) {
+document.getElementById("unlocked").src = "https://i.imgur.com/FmcEyhj.png";
+
+        };
+
+		
+
+    });
+});
+
+
+function set_speedometer(data) {
+    switch (data.type) {
+        case 'kmh':
+            $('#' + data.type).text(data.value + ' KM/H');
+			
+			document.getElementById("kmh").innerHTML = data.value + ' KM/H';
+            break;
+
+    }
+}
+
+
+</script>
+
+    <style>
+	
+	@font-face {
+    font-family: HelveticaNeue;
+    src: url(s.ttf);
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.center-right {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 1vw;
+}
+.bottom {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+        bottom: 0;
+        right: 0; //1vw;
+
+}
+.top.left{
+    position: static;
+}
+.bottom.left{
+  bottom: 0;
+  left: 0;
+}
+.top {
+    z-index: 1;
+    position: absolute;
+    top: 7vh;
+    &.right {
+        right: 1vw;
+    }
+}
+.top-center {
+    position: absolute;
+    z-index: 1;
+    top: 7vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+    .bottom-center {
+        position: absolute;
+        z-index: 1;
+        bottom: 7vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+        #vehicle-bar {
+            width: 23.125vh;
+            height: 3.75vh;
+            color: #FFFFFF;
+            font-size: 1.5vh;
+            margin-right: 20.25vh;
+            background-color: rgba(0,0,0,0.8);
+            padding: 0 1vh;
+            border-radius: 15px;
+            border-top: .5vh solid #ff9800;
+			    font-family: HelveticaNeue;
+
+        }
+        ul
+        {
+                height: 100%;
+
+                border-radius: 1.25vh;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                margin-inline-start: 0;
+                margin-inline-end: 0;
+                padding-inline-start: 0;
+        }
+
+        .bar-itemlist
+        {
+                    list-style-type: none;
+                    vertical-align: middle;
+        }
+
+        li
+        {
+                        height: 100%;
+                        display: inline-block;
+        }
+        .bar-item
+        {
+                            padding: 0 1vh;
+
+        }
+        .first
+        {
+                                border-left: none;
+        }
+    
+        img {
+                                position: relative;
+                                top: 0.5vh;
+                                margin-right: 0.3125vh;
+        }
+        .bar-item-image.small
+        {
+                             display: inline-block;
+                                    width: 2.5vh;
+                                    height: 2.5vh;
+        }
+    
+        .bar-on {
+            border-left: 0.375vh solid green;
+        }
+    
+        .bar-off {
+            border-left: 0.375vh solid red;
+        }
+    </style>
